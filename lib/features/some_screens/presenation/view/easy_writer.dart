@@ -8,7 +8,7 @@ import 'widgets/how_to_app_bar.dart';
 class EasyWriter extends StatelessWidget {
   const EasyWriter({super.key});
 
-  static const String routeName = 'How To';
+  static const String routeName = 'Easy Writer';
 
   @override
   Widget build(BuildContext context) {

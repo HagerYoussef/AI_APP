@@ -12,19 +12,16 @@ class HowTo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar:HowToAppBar(title: 'How To',),
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const CustomTextField(hintText: 'Enter Your Question'),
-              SizedBox(height: 20.h),
-              const AnswerContainer(text: 'Answer'),
-            ],
-          ),
+    return Scaffold(
+      appBar: const HowToAppBar(title: 'How To'),
+      body: Padding(
+        padding: EdgeInsets.all(20.0.w),
+        child: Column(
+          children: [
+            CustomTextField(hintText: 'Enter Your Question'),
+            SizedBox(height: 20.h),
+            AnswerContainer(text: 'Text'),
+          ],
         ),
       ),
     );

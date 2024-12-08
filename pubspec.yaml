@@ -75,6 +75,7 @@ flutter:
     - assets/images/on_boarding/ellipse/
     - assets/images/home/
     - assets/lang/
+    - assets/images/chat/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
