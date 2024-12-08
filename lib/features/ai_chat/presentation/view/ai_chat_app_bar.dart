@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HowToAppBar extends StatelessWidget implements PreferredSizeWidget {
+class AiChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
-  const HowToAppBar({Key? key, required this.title}) : super(key: key);
+  const AiChatAppBar({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class HowToAppBar extends StatelessWidget implements PreferredSizeWidget {
         height: 128.h,
         color: const Color(0xff19488E),
         child: Padding(
-          padding: const EdgeInsets.only(top: 20),
+          padding:  EdgeInsets.only(top: 20.h),
           child: AppBar(
             leading: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
             backgroundColor: Colors.transparent,
@@ -49,10 +49,15 @@ class HowToAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 ],
               ),
-              trailing: CircleAvatar(
-                radius: 24.r,
-                backgroundColor: Colors.transparent,
-                backgroundImage: const AssetImage('assets/images/chat/record.png'),
+              trailing: InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context,"Voice Screen" );
+                },
+                child: CircleAvatar(
+                  radius: 24.r,
+                  backgroundColor: Colors.transparent,
+                  backgroundImage: const AssetImage('assets/images/chat/record.png'),
+                ),
               ),
             ),
           ),

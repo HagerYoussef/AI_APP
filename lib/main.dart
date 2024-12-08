@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/localization/app_localization.dart';
 import 'features/ai_chat/presentation/view/ai_chat_view.dart';
+import 'features/ai_chat/presentation/view/widgets/voice.dart';
 import 'features/auth/presentation/view/enter_code.dart';
 import 'features/auth/presentation/view/forget_password.dart';
 import 'features/auth/presentation/view/intro_screen_view.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
                   GenerateImage.routeName: (_) => const GenerateImage(),
                   TextSummarizer.routeName: (_) => const TextSummarizer(),
                   AiChatView.routeName: (_) => const AiChatView(),
+                  VoicePage.routeName: (_) => const VoicePage(),
                 },
                 initialRoute: AiChatView.routeName,
               );
