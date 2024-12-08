@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ai_app/core/localization/app_localization.dart'; // تأكد من استيراد localization
 
 class SkipButton extends StatelessWidget {
   final VoidCallback onTap;
@@ -11,7 +12,7 @@ class SkipButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Text(
-        'Skip',
+        AppLocalizations.of(context)!.translate('skip'),
         style: TextStyle(
           fontFamily: 'Inter',
           fontSize: 18.sp,

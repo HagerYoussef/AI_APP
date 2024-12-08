@@ -26,6 +26,8 @@ class PageIndicator extends StatelessWidget {
           dotWidth: 8.w,
           radius: 20.r,
           expansionFactor: 4,
+          // ضبط الحركة بحيث تكون ثابتة بغض النظر عن اللغة
+          offset: 0, // محاولة تثبيت الحركة مع تعديل هذه الخاصية
         ),
       ),
     );

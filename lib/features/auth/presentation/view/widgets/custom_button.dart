@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/localization/app_localization.dart';
 
 class RegisterButton extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class RegisterButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(9.r),
         child: Center(
           child: Text(
-            'Register',
+            AppLocalizations.of(context)!.translate('Register'),
             style: TextStyle(
               color: const Color(0xff294065),
               fontSize: 16.sp,

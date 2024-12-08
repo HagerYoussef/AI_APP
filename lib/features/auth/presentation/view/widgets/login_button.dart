@@ -1,7 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/localization/app_localization.dart';
 
 class LoginButton extends StatelessWidget {
   @override
@@ -25,7 +24,7 @@ class LoginButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(9.r),
         child: Center(
           child: Text(
-            'Log In',
+            AppLocalizations.of(context)!.translate('Login') ,
             style: TextStyle(
               color: Colors.white,
               fontSize: 16.sp,

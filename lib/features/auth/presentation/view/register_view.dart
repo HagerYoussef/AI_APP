@@ -2,6 +2,7 @@ import 'package:ai_app/features/auth/presentation/view/widgets/auth_button.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // استيراد مكتبة ScreenUtil
 
+import '../../../../../core/localization/app_localization.dart';
 import '../../../../core/utils/image_paths.dart';
 import 'widgets/email_field.dart';
 import 'widgets/full_name.dart';
@@ -24,7 +25,7 @@ class RegisterView extends StatelessWidget {
           Positioned(
             child: Image.asset(
               ImagePaths.background,
-              fit: BoxFit.cover,width: double.infinity,
+              fit: BoxFit.cover, width: double.infinity,
             ),
           ),
           SingleChildScrollView(
@@ -37,9 +38,9 @@ class RegisterView extends StatelessWidget {
                     alignment: AlignmentDirectional.topStart,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: const HeaderText(
-                        title: "Register",
-                        subtitle: "We are the best chat platform",
+                      child: HeaderText(
+                        title: AppLocalizations.of(context)!.translate('Register') ,
+                        subtitle: AppLocalizations.of(context)!.translate('we') ,
                       ),
                     ),
                   ),
@@ -54,7 +55,7 @@ class RegisterView extends StatelessWidget {
                     onTap: () {
                       Navigator.pushNamed(context, 'Home Screen');
                     },
-                    buttonText: 'Register',
+                    buttonText: AppLocalizations.of(context)!.translate('Register') ,
                   ),
                   SizedBox(height: 60.h),
                   const SocialButtons(),

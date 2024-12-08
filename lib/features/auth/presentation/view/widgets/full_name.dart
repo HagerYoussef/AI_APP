@@ -1,6 +1,7 @@
 import 'package:ai_app/core/utils/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/localization/app_localization.dart';
 
 class FullNameField extends StatelessWidget {
   const FullNameField({super.key});
@@ -20,7 +21,7 @@ class FullNameField extends StatelessWidget {
               height: 15.89.h,
             ),
           ),
-          hintText: 'Full Name',
+          hintText: AppLocalizations.of(context)!.translate('full') ,
           hintStyle: const TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 16,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/localization/app_localization.dart';
+
 class EmailField extends StatelessWidget {
   const EmailField({super.key});
 
@@ -20,7 +22,7 @@ class EmailField extends StatelessWidget {
               height: 15.89.h,
             ),
           ),
-          hintText: 'Email Address',
+          hintText: AppLocalizations.of(context)!.translate('email') ?? 'Email Address', // ترجمة النص هنا
           hintStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 16.sp,

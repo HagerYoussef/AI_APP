@@ -2,6 +2,7 @@ import 'package:ai_app/core/utils/image_paths.dart';
 import 'package:ai_app/features/auth/presentation/view/widgets/socail_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // استيراد المكتبة
+import '../../../../core/localization/app_localization.dart'; // تأكد من أن لديك ملف اللغات
 
 import 'register_view.dart';
 import 'widgets/email_field.dart';
@@ -18,7 +19,6 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.only(top: 94.h),
@@ -27,9 +27,8 @@ class LoginView extends StatelessWidget {
             Positioned(
               child: Image.asset(
                 ImagePaths.background,
-                fit: BoxFit.cover,width: double.infinity,
-
-
+                fit: BoxFit.cover,
+                width: double.infinity,
               ),
             ),
             SingleChildScrollView(
@@ -38,13 +37,13 @@ class LoginView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Align(
                         alignment: AlignmentDirectional.topStart,
                         child: HeaderText(
-                          title: 'Log in',
-                          subtitle: 'We are the best chat platform',
+                          title: AppLocalizations.of(context)!.translate('LogIn'),
+                          subtitle: AppLocalizations.of(context)!.translate('we') ,
                         ),
                       ),
                     ),
@@ -54,8 +53,8 @@ class LoginView extends StatelessWidget {
                     const PasswordField(),
                     SizedBox(height: 10.h),
                     ForgotAndResendButton(
-                      text: 'Forget Password ?',
-                      onPressed: () {
+                      text: AppLocalizations.of(context)!.translate('forget') ,
+                          onPressed: () {
                         Navigator.pushNamed(context, 'Forget Screen');
                       },
                     ),
@@ -64,7 +63,7 @@ class LoginView extends StatelessWidget {
                       onTap: () {
                         Navigator.pushNamed(context, 'Home Screen');
                       },
-                      buttonText: 'Log In',
+                      buttonText: AppLocalizations.of(context)!.translate('LogIn')
                     ),
                     SizedBox(height: 20.h),
                     const RegisterButton(),

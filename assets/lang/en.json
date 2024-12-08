@@ -1,0 +1,27 @@
+{
+  "lang": "Language",
+  "ask": "Ask anything to Ai assistant.",
+  "generate": "Generate images from Text.",
+  "create": "Create Presentations.",
+  "fast": "Fast and easy payment solution.",
+  "arabai": "ArabAi is always with you!",
+  "skip": "Skip",
+
+
+"LogIn":"Log In" ,
+  "Register": "Register",
+  "Login": "Log in",
+  "we": "We are the best chat platform",
+  "email": "Email Address",
+  "Password": "Password",
+  "forget": "Forget Password ?",
+  "dont": "Don’t have an Account? Register",
+  "con": "Continue with Google",
+  "con2": "Continue with Apple",
+  "full":"Full Name",
+  "forgetpass":"Forget Password",
+  "send": "Send",
+  "enter": "Enter Code",
+  "plase": "Please enter the code we just sent you"
+
+}

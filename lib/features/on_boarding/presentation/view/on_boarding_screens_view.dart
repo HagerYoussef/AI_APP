@@ -6,7 +6,10 @@ import 'package:ai_app/features/on_boarding/presentation/view/widgets/skip_butto
 import 'package:ai_app/features/on_boarding/presentation/view/widgets/text_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/localization/app_localization.dart';
+import '../../../language/presentation/view_model/cubit/language_cubit.dart';
 import 'widgets/next_button.dart';
 
 class OnBoardingScreensView extends StatefulWidget {
@@ -28,16 +31,18 @@ class _OnBoardingScreensViewState extends State<OnBoardingScreensView> {
     'assets/images/on_boarding/on_boarding_5.png',
   ];
 
-  final List<String> _texts = [
-    'Ask anything to Ai assistant.',
-    'Generate images from Text.',
-    'Create Presentations.',
-    'Fast and easy payment solution.',
-    'ArabAi is always with you!',
-  ];
+  List<String> _texts = [];
 
   @override
   Widget build(BuildContext context) {
+    _texts = [
+      AppLocalizations.of(context)!.translate('ask'),
+      AppLocalizations.of(context)!.translate('generate'),
+      AppLocalizations.of(context)!.translate('create'),
+      AppLocalizations.of(context)!.translate('fast'),
+      AppLocalizations.of(context)!.translate('arabai'),
+    ];
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -73,7 +78,7 @@ class _OnBoardingScreensViewState extends State<OnBoardingScreensView> {
               left: 20.w,
               child: TextContent(text: _texts[_currentPage]),
             ),
-            if (_currentPage != _images.length - 1) ...[ // Show indicator only if not on the last page
+            if (_currentPage != _images.length - 1) ...[
               Positioned(
                 bottom: 200.h,
                 left: 0,
@@ -82,8 +87,6 @@ class _OnBoardingScreensViewState extends State<OnBoardingScreensView> {
                   count: _images.length,
                 ),
               ),
-            ],
-            if (_currentPage != _images.length - 1) ...[
               Positioned(
                 bottom: 130.h,
                 right: 20.w,
@@ -106,7 +109,7 @@ class _OnBoardingScreensViewState extends State<OnBoardingScreensView> {
                 bottom: 140.h,
                 left: 20.w,
                 child: SkipButton(onTap: () {
-                  Navigator.of(context).pushNamed('/home');
+                  Navigator.of(context).pushNamed('Enter Code');
                 }),
               ),
             ] else ...[
@@ -114,16 +117,63 @@ class _OnBoardingScreensViewState extends State<OnBoardingScreensView> {
                 bottom: 150.h,
                 left: 20.w,
                 right: 20.w,
-                child: CustomButton(onPressed: (){
-
-                })
+                child: CustomButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('Intro Screen');
+                  },
+                ),
               ),
             ],
+            Positioned(
+              top: 58.h,
+              left: 29.w,
+              child: GestureDetector(
+                onTap: () {
+                  // تغيير اللغة
+                  final languageCubit = BlocProvider.of<LanguageCubit>(context);
+                  final currentLocale = Localizations.localeOf(context).languageCode;
+                  String newLanguage = currentLocale == 'en' ? 'ar' : 'en';
+                  languageCubit.changeLanguage(newLanguage);
+                },
+                child: Container(
+                  width: 126.w,
+                  height: 52.h,
+                  padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 11.h),
+                  decoration: BoxDecoration(
+                    color: const Color(0x2D7D8F).withOpacity(0.51), // Hex with opacity
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(17),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    textDirection: Localizations.localeOf(context).languageCode == 'ar'
+                        ? TextDirection.rtl
+                        : TextDirection.ltr, // تعديل الاتجاه حسب اللغة
+                    children: [
+                      Icon(
+                        Icons.language,
+                        size: 24.sp,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: 10.w),
+                      Text(
+                        AppLocalizations.of(context)!.translate('lang'),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
+
           ],
         ),
       ),
     );
   }
 }
-
-

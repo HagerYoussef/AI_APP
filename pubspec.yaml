@@ -30,6 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -38,10 +40,13 @@ dependencies:
   flutter_screenutil: ^5.9.3
   smooth_page_indicator: ^1.2.0+3
   percent_indicator: ^4.2.4
+  flutter_bloc: ^8.1.6
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -69,6 +74,7 @@ flutter:
     - assets/images/on_boarding/
     - assets/images/on_boarding/ellipse/
     - assets/images/home/
+    - assets/lang/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
