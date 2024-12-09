@@ -76,6 +76,7 @@ flutter:
     - assets/images/home/
     - assets/lang/
     - assets/images/chat/
+    - assets/images/home/drawer/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

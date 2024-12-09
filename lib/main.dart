@@ -11,9 +11,9 @@ import 'features/auth/presentation/view/intro_screen_view.dart';
 import 'features/auth/presentation/view/login_view.dart';
 import 'features/auth/presentation/view/register_view.dart';
 import 'features/home/presentation/home_view.dart';
+import 'features/home/presentation/widgets/custome_drawer.dart';
 import 'features/language/presentation/view_model/cubit/language_cubit.dart';
 import 'features/on_boarding/presentation/view/on_boarding_screens_view.dart';
-
 import 'features/some_screens/presenation/view/create_presentation.dart';
 import 'features/some_screens/presenation/view/easy_writer.dart';
 import 'features/some_screens/presenation/view/email_writer.dart';
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
                 routes: {
                   SplashView.routeName: (_) => const SplashView(),
                   OnBoardingScreensView.routeName: (_) => OnBoardingScreensView(),
-                  HomeView.routeName: (_) => HomeView(),
+                  HomePage.routeName: (_) => HomePage(),
                   IntroScreen.routeName: (_) => IntroScreen(),
                   LoginView.routeName: (_) => const LoginView(),
                   RegisterView.routeName: (_) => const RegisterView(),
@@ -68,8 +68,9 @@ class MyApp extends StatelessWidget {
                   TextSummarizer.routeName: (_) => const TextSummarizer(),
                   AiChatView.routeName: (_) => const AiChatView(),
                   VoicePage.routeName: (_) => const VoicePage(),
+                  CustomDrawer.routeName: (_) =>  CustomDrawer(),
                 },
-                initialRoute: AiChatView.routeName,
+                initialRoute: HomePage.routeName,
               );
             },
           ),
