@@ -68,7 +68,7 @@ class SuccessPayment extends StatelessWidget {
 
             CustomButton(
               onPressed: () {},
-              text: 'Back to Home',
+              text: 'Back to Home', w: 317.w,
             ),
             SizedBox(height: 30.h),
             Image.asset("assets/images/payment/button_white.png",height: 61.h,width: 317.w,)

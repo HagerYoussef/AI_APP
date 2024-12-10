@@ -94,7 +94,7 @@ class PaymentCardScreen extends StatelessWidget {
             const Spacer(),
             Padding(
               padding: EdgeInsets.only(bottom: 40.h),
-              child: CustomButton(text: "Confirm Payment", onPressed: () {}),
+              child: CustomButton(text: "Confirm Payment", onPressed: () {}, w: 317.w,),
             ),
           ],
         ),

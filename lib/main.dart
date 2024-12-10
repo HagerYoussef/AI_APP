@@ -16,6 +16,7 @@ import 'features/on_boarding/presentation/view/on_boarding_screens_view.dart';
 import 'features/payment/presenation/view/payment_view.dart';
 import 'features/payment/presenation/view/widgets/payment_card_screen.dart';
 import 'features/payment/presenation/view/widgets/success_payment.dart';
+import 'features/profile/edit_profile.dart';
 import 'features/profile/profile.dart';
 import 'features/profile/view_model/cubit/theme_cubit.dart';
 import 'features/some_screens/presenation/view/create_presentation.dart';
@@ -85,8 +86,9 @@ class MyApp extends StatelessWidget {
                         ProfileScreen.routeName: (_) =>  ProfileScreen(),
                         PaymentCardScreen.routeName: (_) =>  PaymentCardScreen(),
                         SuccessPayment.routeName: (_) =>  SuccessPayment(),
+                        EditProfilePage.routeName: (_) =>  EditProfilePage(),
                       },
-                      initialRoute: SuccessPayment.routeName,
+                      initialRoute: EditProfilePage.routeName,
                     );
                   },
                 );
