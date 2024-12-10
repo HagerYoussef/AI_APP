@@ -14,6 +14,7 @@ import 'features/home/presentation/home_view.dart';
 import 'features/home/presentation/widgets/custome_drawer.dart';
 import 'features/language/presentation/view_model/cubit/language_cubit.dart';
 import 'features/on_boarding/presentation/view/on_boarding_screens_view.dart';
+import 'features/payment/presenation/view/payment_view.dart';
 import 'features/some_screens/presenation/view/create_presentation.dart';
 import 'features/some_screens/presenation/view/easy_writer.dart';
 import 'features/some_screens/presenation/view/email_writer.dart';
@@ -69,8 +70,9 @@ class MyApp extends StatelessWidget {
                   AiChatView.routeName: (_) => const AiChatView(),
                   VoicePage.routeName: (_) => const VoicePage(),
                   CustomDrawer.routeName: (_) =>  CustomDrawer(),
+                  PaymentScreen.routeName: (_) =>  PaymentScreen(),
                 },
-                initialRoute: HomePage.routeName,
+                initialRoute: PaymentScreen.routeName,
               );
             },
           ),
