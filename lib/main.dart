@@ -9,6 +9,7 @@ import 'features/auth/presentation/view/forget_password.dart';
 import 'features/auth/presentation/view/intro_screen_view.dart';
 import 'features/auth/presentation/view/login_view.dart';
 import 'features/auth/presentation/view/register_view.dart';
+import 'features/history/presenation/view/history.dart';
 import 'features/home/presentation/home_view.dart';
 import 'features/home/presentation/widgets/custome_drawer.dart';
 import 'features/language/presentation/view_model/cubit/language_cubit.dart';
@@ -49,8 +50,28 @@ class MyApp extends StatelessWidget {
                 return BlocBuilder<ThemeCubit, ThemeState>(
                   builder: (context, themeState) {
                     return MaterialApp(
-                      theme: ThemeData.light(),
-                      darkTheme: ThemeData.dark(),
+                      theme: ThemeData.light().copyWith(
+                        primaryColor: Colors.white, // اللون الأبيض للوضع الفاتح
+                        scaffoldBackgroundColor: Colors.white,
+                        appBarTheme: AppBarTheme(
+                          backgroundColor: Colors.white, // لون الـ AppBar للوضع الفاتح
+                          iconTheme: IconThemeData(color: Colors.black),
+                        ),
+                        textTheme: TextTheme(
+                          bodyLarge: TextStyle(color: Colors.black), // النص في الوضع الفاتح
+                        ),
+                      ),
+                      darkTheme: ThemeData.dark().copyWith(
+                        primaryColor: Color(0xff0C2855), // اللون الغامق المحدد
+                        scaffoldBackgroundColor: Color(0xff0C2855),
+                        appBarTheme: AppBarTheme(
+                          backgroundColor: Color(0xff0C2855), // لون الـ AppBar للوضع الداكن
+                          iconTheme: IconThemeData(color: Colors.white),
+                        ),
+                        textTheme: TextTheme(
+                          bodyLarge: TextStyle(color: Colors.white), // النص في الوضع الداكن
+                        ),
+                      ),
                       themeMode: themeState == ThemeState.light ? ThemeMode.light : ThemeMode.dark,
                       debugShowCheckedModeBanner: false,
                       locale: locale,
@@ -87,8 +108,9 @@ class MyApp extends StatelessWidget {
                         PaymentCardScreen.routeName: (_) =>  PaymentCardScreen(),
                         SuccessPayment.routeName: (_) =>  SuccessPayment(),
                         EditProfilePage.routeName: (_) =>  EditProfilePage(),
+                        History.routeName: (_) =>  History(),
                       },
-                      initialRoute: EditProfilePage.routeName,
+                      initialRoute: ProfileScreen.routeName,
                     );
                   },
                 );

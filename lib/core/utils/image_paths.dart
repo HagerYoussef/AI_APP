@@ -8,4 +8,5 @@ class ImagePaths {
   static const String google =    'assets/images/login/google.png';
   static const String apple =  'assets/images/login/apple.png';
   static const String password =    'assets/images/login/password.png';
+  static const String history_image =    'assets/images/clear_all_2.png';
  }
