@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/localization/app_localization.dart';
+import 'core/themes/colors.dart';
 import 'features/ai_chat/presentation/view/ai_chat_view.dart';
 import 'features/ai_chat/presentation/view/widgets/voice.dart';
 import 'features/auth/presentation/view/enter_code.dart';
@@ -12,13 +13,14 @@ import 'features/auth/presentation/view/register_view.dart';
 import 'features/history/presenation/view/history.dart';
 import 'features/home/presentation/home_view.dart';
 import 'features/home/presentation/widgets/custome_drawer.dart';
+import 'features/language/presentation/view/language.dart';
 import 'features/language/presentation/view_model/cubit/language_cubit.dart';
 import 'features/on_boarding/presentation/view/on_boarding_screens_view.dart';
 import 'features/payment/presenation/view/payment_view.dart';
 import 'features/payment/presenation/view/widgets/payment_card_screen.dart';
 import 'features/payment/presenation/view/widgets/success_payment.dart';
-import 'features/profile/edit_profile.dart';
-import 'features/profile/profile.dart';
+import 'features/profile/view/edit_profile.dart';
+import 'features/profile/view/profile.dart';
 import 'features/profile/view_model/cubit/theme_cubit.dart';
 import 'features/some_screens/presenation/view/create_presentation.dart';
 import 'features/some_screens/presenation/view/easy_writer.dart';
@@ -51,25 +53,25 @@ class MyApp extends StatelessWidget {
                   builder: (context, themeState) {
                     return MaterialApp(
                       theme: ThemeData.light().copyWith(
-                        primaryColor: Colors.white, // اللون الأبيض للوضع الفاتح
-                        scaffoldBackgroundColor: Colors.white,
+                        primaryColor:ColorApp.white_color,
+                        scaffoldBackgroundColor: ColorApp.white_color,
                         appBarTheme: AppBarTheme(
-                          backgroundColor: Colors.white, // لون الـ AppBar للوضع الفاتح
-                          iconTheme: IconThemeData(color: Colors.black),
+                          backgroundColor: Colors.white,
+                          iconTheme: IconThemeData(color: ColorApp.dark_color),
                         ),
                         textTheme: TextTheme(
-                          bodyLarge: TextStyle(color: Colors.black), // النص في الوضع الفاتح
+                          bodyLarge: TextStyle(color: ColorApp.dark_color),
                         ),
                       ),
                       darkTheme: ThemeData.dark().copyWith(
-                        primaryColor: Color(0xff0C2855), // اللون الغامق المحدد
-                        scaffoldBackgroundColor: Color(0xff0C2855),
+                        primaryColor: Color(0xff26262B),
+                        scaffoldBackgroundColor: ColorApp.dark_color,
                         appBarTheme: AppBarTheme(
-                          backgroundColor: Color(0xff0C2855), // لون الـ AppBar للوضع الداكن
-                          iconTheme: IconThemeData(color: Colors.white),
+                          backgroundColor: ColorApp.dark_color,
+                          iconTheme: IconThemeData(color: ColorApp.white_color),
                         ),
                         textTheme: TextTheme(
-                          bodyLarge: TextStyle(color: Colors.white), // النص في الوضع الداكن
+                          bodyLarge: TextStyle(color: ColorApp.white_color),
                         ),
                       ),
                       themeMode: themeState == ThemeState.light ? ThemeMode.light : ThemeMode.dark,
@@ -109,6 +111,7 @@ class MyApp extends StatelessWidget {
                         SuccessPayment.routeName: (_) =>  SuccessPayment(),
                         EditProfilePage.routeName: (_) =>  EditProfilePage(),
                         History.routeName: (_) =>  History(),
+                        LanguageSelectionPage.routeName: (_) =>  LanguageSelectionPage(),
                       },
                       initialRoute: ProfileScreen.routeName,
                     );

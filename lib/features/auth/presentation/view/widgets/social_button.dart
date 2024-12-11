@@ -1,3 +1,4 @@
+import 'package:ai_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,7 +20,7 @@ class SocialButton extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: Colors.white,
+          color: ColorApp.white_color,
 
         ),
       ),
@@ -31,7 +32,7 @@ class SocialButton extends StatelessWidget {
           Text(
             text,
             style:  TextStyle(
-              color: Colors.white,
+              color: ColorApp.white_color,
               fontSize: 15.sp,
               fontFamily: 'Cairo',
               fontWeight: FontWeight.w500,

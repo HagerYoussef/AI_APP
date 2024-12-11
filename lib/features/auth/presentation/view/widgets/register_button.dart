@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/localization/app_localization.dart';
+import '../../../../../core/themes/colors.dart';
 
 class RegisterButton extends StatelessWidget {
   const RegisterButton({super.key});
@@ -13,7 +14,7 @@ class RegisterButton extends StatelessWidget {
         text: TextSpan(
           text: AppLocalizations.of(context)!.translate('dont') ,
           style: TextStyle(
-            color: Colors.white,
+            color: ColorApp.white_color,
             fontSize: 14.sp,
             fontWeight: FontWeight.normal,
           ),
@@ -21,7 +22,7 @@ class RegisterButton extends StatelessWidget {
             TextSpan(
               text: AppLocalizations.of(context)!.translate('Register') ,
               style: TextStyle(
-                color: const Color(0xff092147),
+                color:  ColorApp.home_color,
                 fontSize: 15.sp,
                 fontFamily: 'Cairo',
                 fontWeight: FontWeight.w600,

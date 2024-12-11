@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/themes/colors.dart';
+
 class Field extends StatelessWidget {
   const Field({super.key});
 
@@ -12,22 +14,22 @@ class Field extends StatelessWidget {
         textAlign: TextAlign.center,
         decoration: InputDecoration(
           hintText: '0000000',
-          hintStyle: const TextStyle(
+          hintStyle:  TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 16,
-            color: Color(0xff92979E),
+            color: ColorApp.color4,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide:  BorderSide(color: ColorApp.white_color),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide:  BorderSide(color: ColorApp.white_color),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide:  BorderSide(color:ColorApp.white_color),
           ),
         ),
       ),

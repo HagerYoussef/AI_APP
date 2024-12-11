@@ -1,5 +1,8 @@
+import 'package:ai_app/core/utils/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/themes/colors.dart';
 
 class CustomNavBar extends StatelessWidget {
   const CustomNavBar();
@@ -14,13 +17,13 @@ class CustomNavBar extends StatelessWidget {
         borderRadius: const BorderRadius.all(
           Radius.circular(60),
         ),
-        gradient: const LinearGradient(
-          colors: [Color(0xFF092049), Color(0xFF19488E)],
+        gradient:  LinearGradient(
+          colors: [ColorApp.color6, ColorApp.color2],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
         border: Border.all(
-          color: const Color(0xFF0F336A),
+          color:  ColorApp.color7,
           width: 1,
         ),
       ),
@@ -30,7 +33,7 @@ class CustomNavBar extends StatelessWidget {
         children: [
           IconButton(
             icon: Image.asset(
-              "assets/images/home/home.png",
+            ImagePaths.home,
               width: 89.w,
               height: 72.h,
             ),
@@ -40,7 +43,7 @@ class CustomNavBar extends StatelessWidget {
           ),
           IconButton(
             icon: Image.asset(
-              "assets/images/home/robot.png",
+              ImagePaths.robot ,
               width: 25.w,
               height: 25.h,
             ),
@@ -50,7 +53,7 @@ class CustomNavBar extends StatelessWidget {
           ),
           IconButton(
             icon: Image.asset(
-              "assets/images/home/person.png",
+            ImagePaths.person2,
               width: 25.w,
               height: 25.h,
             ),

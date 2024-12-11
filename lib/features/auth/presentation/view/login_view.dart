@@ -1,9 +1,10 @@
 import 'package:ai_app/core/utils/image_paths.dart';
 import 'package:ai_app/features/auth/presentation/view/widgets/socail_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // استيراد المكتبة
-import '../../../../core/localization/app_localization.dart'; // تأكد من أن لديك ملف اللغات
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/localization/app_localization.dart';
 
+import '../../../../core/themes/colors.dart';
 import 'register_view.dart';
 import 'widgets/email_field.dart';
 import 'widgets/forget_email_button.dart';
@@ -20,6 +21,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorApp.white_color,
       body: Padding(
         padding: EdgeInsets.only(top: 94.h),
         child: Stack(
@@ -38,7 +40,7 @@ class LoginView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding:  EdgeInsets.only(top: 20.h),
                       child: Align(
                         alignment: AlignmentDirectional.topStart,
                         child: HeaderText(
@@ -67,7 +69,7 @@ class LoginView extends StatelessWidget {
                     ),
                     SizedBox(height: 20.h),
                     const RegisterButton(),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 60.h),
                     const SocialButtons(),
                   ],
                 ),

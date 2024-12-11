@@ -9,4 +9,23 @@ class ImagePaths {
   static const String apple =  'assets/images/login/apple.png';
   static const String password =    'assets/images/login/password.png';
   static const String history_image =    'assets/images/clear_all_2.png';
+  static const String email_image =    'assets/images/login/email.png';
+  static const String image1 =    'assets/images/home/Rectangle 21 (1).png';
+  static const String image2 =    'assets/images/home/Rectangle 21 (2).png';
+  static const String image3=   'assets/images/home/Rectangle 21 (3).png';
+  static const String  image4 =   'assets/images/home/Rectangle 21 (3).png';
+  static const String  image5 =    'assets/images/home/Rectangle 21 (4).png';
+  static const String  image6 =    'assets/images/home/Rectangle 21 (5).png';
+  static const String  home2 =    'assets/images/home/home2.png';
+  static const String  home3 =    'assets/images/home/home3.png';
+  static const String  menu =    'assets/images/home/menu.png';
+  static const String  home =      "assets/images/home/home.png";
+  static const String  robot =       "assets/images/home/robot.png";
+  static const String  diamond =      "assets/images/home/drawer/diamond.png";
+  static const String  facebook =      "assets/images/home/drawer/facebook.png";
+  static const String  youtube =      "assets/images/home/drawer/youtube.png";
+  static const String  person2 =         "assets/images/home/person.png";
+  static const String  circleProfile =    'assets/images/home/circle_profile.png';
+  static const String  close =      "assets/images/home/drawer/close.png";
+  static const String  share =      'assets/images/share.png';
  }

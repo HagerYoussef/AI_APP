@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/themes/colors.dart';
+
 class HowToAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
@@ -18,7 +20,17 @@ class HowToAppBar extends StatelessWidget implements PreferredSizeWidget {
         width: double.infinity,
 
         height: 128.h,
-        color: const Color(0xff19488E),
+        decoration: BoxDecoration(
+          color: const Color(0xff19488E),
+
+          boxShadow:  [
+            BoxShadow(
+              color:ColorApp.shadow,
+              blurRadius: 8.8,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
         child: Padding(
           padding: const EdgeInsets.only(top: 9.0),
           child: AppBar(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/localization/app_localization.dart';
+import '../../../../../core/themes/colors.dart';
 
 class LoginButton extends StatelessWidget {
   @override
@@ -10,12 +11,12 @@ class LoginButton extends StatelessWidget {
       height: 48.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(9.r),
-        gradient: const LinearGradient(
+        gradient:  LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
           colors: [
-            Color(0xFF0D2C5C),
-            Color(0xFF19488E),
+            ColorApp.color1,
+            ColorApp.color2
           ],
         ),
       ),
@@ -26,7 +27,7 @@ class LoginButton extends StatelessWidget {
           child: Text(
             AppLocalizations.of(context)!.translate('Login') ,
             style: TextStyle(
-              color: Colors.white,
+              color: ColorApp.white_color,
               fontSize: 16.sp,
               fontWeight: FontWeight.bold,
             ),

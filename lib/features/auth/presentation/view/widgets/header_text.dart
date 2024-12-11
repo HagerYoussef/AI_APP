@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/themes/colors.dart';
+
 class HeaderText extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -21,7 +23,7 @@ class HeaderText extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.w800,
             fontSize: 24.sp,
-            color: Colors.white,
+            color: ColorApp.white_color,
             fontFamily: 'Cairo',
           ),
         ),
@@ -31,7 +33,7 @@ class HeaderText extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 18.sp,
-            color: Colors.white,
+            color: ColorApp.white_color,
             fontFamily: 'Inter',
           ),
         ),

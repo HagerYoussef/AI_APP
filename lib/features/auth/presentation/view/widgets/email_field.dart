@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/localization/app_localization.dart';
+import '../../../../../core/themes/colors.dart';
+import '../../../../../core/utils/image_paths.dart';
 
 class EmailField extends StatelessWidget {
   const EmailField({super.key});
@@ -17,28 +19,28 @@ class EmailField extends StatelessWidget {
           prefixIcon: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image.asset(
-              'assets/images/login/email.png',
+              ImagePaths.email_image,
               width: 24.w,
               height: 15.89.h,
             ),
           ),
-          hintText: AppLocalizations.of(context)!.translate('email') ?? 'Email Address', // ترجمة النص هنا
+          hintText: AppLocalizations.of(context)!.translate('email') ,
           hintStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 16.sp,
-            color: const Color(0xff92979E),
+            color:  ColorApp.color4,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide:  BorderSide(color: ColorApp.white_color),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide:  BorderSide(color: ColorApp.white_color),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide:  BorderSide(color: ColorApp.white_color),
           ),
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:ai_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,7 +19,7 @@ class AuthButton extends StatelessWidget {
       height: 50.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.white,
+        color: ColorApp.white_color,
       ),
       child: InkWell(
         onTap: onTap,
@@ -27,7 +28,7 @@ class AuthButton extends StatelessWidget {
           child: Text(
             buttonText,
             style: TextStyle(
-              color: const Color(0xff19488E),
+              color:  ColorApp.color2,
               fontSize: 20.sp,
               fontFamily: 'Nunito Sans',
               fontWeight: FontWeight.w800,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/themes/colors.dart';
+
 class AnswerContainer extends StatelessWidget {
   final String text;
 
@@ -19,12 +21,12 @@ class AnswerContainer extends StatelessWidget {
         vertical: 20.h,
       ),
       decoration: BoxDecoration(
-        color: const Color(0xffa8b9d5),
+        color:  ColorApp.color9,
         borderRadius: BorderRadius.circular(10.r),
-        border: const Border(
+        border:  Border(
           bottom: BorderSide(
-            color: Color(0xff4069AA),
-            width: 4,
+            color: ColorApp.color10,
+            width: 4.w,
           ),
         ),
       ),
@@ -34,7 +36,7 @@ class AnswerContainer extends StatelessWidget {
           fontWeight: FontWeight.w500,
           fontSize: 20.sp,
           fontFamily: 'Cairo',
-          color: const Color(0xff505551),
+          color:  ColorApp.color11,
         ),
       ),
     );

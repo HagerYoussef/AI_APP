@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/themes/colors.dart';
+
 class ForgotAndResendButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
@@ -18,7 +20,7 @@ class ForgotAndResendButton extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontFamily: 'Cairo',
-            color: Colors.white,
+            color: ColorApp.white_color,
             fontSize: 16.sp,
           ),
         ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/localization/app_localization.dart';
+import '../../../../core/utils/image_paths.dart';
 import 'future_card.dart';
 
 class FeatureGrid extends StatelessWidget {
@@ -16,36 +18,68 @@ class FeatureGrid extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       childAspectRatio: 167 / 120,
       physics: const NeverScrollableScrollPhysics(),
-      children:  const [
-        FeatureCard(
-          title: 'How To',
-          description: 'Generates step-by-step instructions for a given task.',
-          iconPath: 'assets/images/home/Rectangle 21 (1).png',
+      children:    [
+
+        InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, "How To");
+          },
+          child: FeatureCard(
+
+            title: AppLocalizations.of(context)!.translate('HowTo'),
+            description: AppLocalizations.of(context)!.translate('HowTo2'),
+            iconPath:ImagePaths.image2 ,
+          ),
         ),
-        FeatureCard(
-          title: 'Code Generator',
-          description: 'Create code snippets based on given requirements.',
-          iconPath: 'assets/images/home/Rectangle 21 (2).png',
+        InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, "Generate Image");
+          },
+          child: FeatureCard(
+            title: AppLocalizations.of(context)!.translate('Code'),
+            description: AppLocalizations.of(context)!.translate('Code2'),
+            iconPath: ImagePaths.image3,
+          ),
         ),
-        FeatureCard(
-          title: 'Create Presentation',
-          description: 'Make a presentation accurately and creatively.',
-          iconPath: 'assets/images/home/Rectangle 21 (3).png',
+        InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, "Create Presentation");
+          },
+          child: FeatureCard(
+            title: AppLocalizations.of(context)!.translate('CreatePre'),
+            description: AppLocalizations.of(context)!.translate('CreatePre2'),
+            iconPath: ImagePaths.image4,
+          ),
         ),
-        FeatureCard(
-          title: 'Email Writer',
-          description: 'Generate emails based on given prompts.',
-          iconPath: 'assets/images/home/Rectangle 21 (3).png',
+        InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, "Email Writer");
+          },
+          child: FeatureCard(
+            title: AppLocalizations.of(context)!.translate('EmailWriter'),
+            description: AppLocalizations.of(context)!.translate('EmailWriter2'),
+            iconPath: ImagePaths.image5,
+          ),
         ),
-        FeatureCard(
-          title: 'Text Summarizer',
-          description: 'Extract main ideas from given texts.',
-          iconPath: 'assets/images/home/Rectangle 21 (4).png',
+        InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, "Text Summarizer");
+          },
+          child: FeatureCard(
+            title: AppLocalizations.of(context)!.translate('TextSummerizer'),
+            description: AppLocalizations.of(context)!.translate('TextSummerizer2'),
+            iconPath:ImagePaths.image6 ,
+          ),
         ),
-        FeatureCard(
-          title: 'Essay Writer',
-          description: 'Generate human-like essays based on prompts.',
-          iconPath: 'assets/images/home/Rectangle 21 (5).png',
+        InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, "Easy Writer");
+          },
+          child: FeatureCard(
+            title: AppLocalizations.of(context)!.translate('EasyWriter'),
+            description: AppLocalizations.of(context)!.translate('EasyWriter'),
+            iconPath:ImagePaths.image1 ,
+          ),
         ),
       ],
     );

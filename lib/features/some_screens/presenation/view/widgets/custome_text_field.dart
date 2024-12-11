@@ -1,5 +1,8 @@
+import 'package:ai_app/core/utils/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../core/themes/colors.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
@@ -21,7 +24,9 @@ class CustomTextField extends StatelessWidget {
         height: 63.h,
         child: TextField(
           decoration: InputDecoration(
-            suffixIcon: Image.asset('assets/images/share.png'),
+            suffixIcon: Image.asset(
+              ImagePaths.share
+            ),
             hintText: hintText,
             hintStyle: TextStyle(
               color: Colors.grey[600],
@@ -44,7 +49,7 @@ class CustomTextField extends StatelessWidget {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(47.r),
       borderSide:  BorderSide(
-        color: const Color(0xff1A4B99),
+        color:  ColorApp.color11,
         width: 2.w,
       ),
     );

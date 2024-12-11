@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/localization/app_localization.dart';
+import '../../../../../core/themes/colors.dart';
 
 class RegisterButton extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class RegisterButton extends StatelessWidget {
       height: 48.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(9.r),
-        color: Colors.white,
+        color: ColorApp.white_color,
       ),
       child: InkWell(
         onTap: () => Navigator.pushReplacementNamed(context, 'Register Screen'),
@@ -19,7 +20,7 @@ class RegisterButton extends StatelessWidget {
           child: Text(
             AppLocalizations.of(context)!.translate('Register'),
             style: TextStyle(
-              color: const Color(0xff294065),
+              color:  ColorApp.color3,
               fontSize: 16.sp,
               fontWeight: FontWeight.bold,
             ),

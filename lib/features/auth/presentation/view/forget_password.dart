@@ -1,3 +1,4 @@
+import 'package:ai_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,6 +16,7 @@ class ForgetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorApp.white_color,
         body: Padding(
           padding: EdgeInsets.only(top: 94.h),
           child: Stack(children: [
@@ -29,7 +31,7 @@ class ForgetPassword extends StatelessWidget {
                 padding: EdgeInsets.all(20.0.h),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                   Padding(
-                    padding: EdgeInsets.all(8.0.h),
+                    padding: EdgeInsets.only(top: 20.h),
                     child: Align(
                       alignment: AlignmentDirectional.topStart,
                       child: HeaderText(

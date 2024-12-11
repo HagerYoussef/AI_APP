@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../payment/presenation/view/widgets/custom_button.dart';
+import '../../payment/presenation/view/widgets/custom_button.dart';
 
 class EditProfilePage extends StatelessWidget {
   static const String routeName = 'Edit Profile';

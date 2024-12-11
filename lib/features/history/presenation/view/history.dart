@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/utils/colors.dart';
+import '../../../../core/themes/colors.dart';
 import '../../../../core/utils/image_paths.dart';
 import '../../../payment/presenation/view/widgets/custome_app_bar.dart';
 

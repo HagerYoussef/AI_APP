@@ -15,13 +15,53 @@
   "email": "Email Address",
   "Password": "Password",
   "forget": "Forget Password ?",
-  "dont": "Don’t have an Account? Register",
+  "dont": "Don’t have an Account? ",
   "con": "Continue with Google",
   "con2": "Continue with Apple",
   "full":"Full Name",
   "forgetpass":"Forget Password",
-  "send": "Send",
+  "send": "Resend Code",
   "enter": "Enter Code",
-  "plase": "Please enter the code we just sent you"
+  "plase": "Please enter the code we just sent you",
+
+
+
+  "HowTo": "How To",
+  "Code": "Code Generator",
+  "CreatePre": "Create Presentation",
+  "EmailWriter": "Email Writer",
+  "TextSummerizer": "Text Summarizer",
+  "EasyWriter": "Essay Writer",
+
+  "featureText":"You can enjoy some ArabAI features:",
+  "HowTo2": "Generates step-by-step instructions for a given task.",
+  "Code2": "Create code snippets based on given requirements.",
+  "CreatePre2": "Make a presentation accurately and creatively.",
+  "EmailWriter2": "Generate emails based on given prompts.",
+  "TextSummerizer2": "Extract main ideas from given texts.",
+  "EasyWriter2": "Generate human-like essays based on prompts.",
+
+  "pro":"Pro",
+  "cold": "Get Gold Credits",
+  "perime": "Premium",
+  "Social": "Social",
+
+  "create2": "Create Presentation",
+  "answer": "Answer",
+  "data": "Enter Your Data",
+  "file": "File",
+  "writer": "Easy Writer",
+  "enter_text": "Enter Your Text",
+  "Text": "Text",
+  "emailwriter": "Email Writer",
+  "craeteimage": "Generate Image",
+  "image": "Image",
+  "howto": "How To",
+  "enteryourquestion": "Enter Your Question",
+  "textSummrizer": "Text Summarizer"
+
+
+
+
 
 }

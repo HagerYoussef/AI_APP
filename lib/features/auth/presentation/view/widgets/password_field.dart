@@ -1,3 +1,4 @@
+import 'package:ai_app/core/themes/colors.dart';
 import 'package:ai_app/core/utils/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,23 +44,23 @@ class _PasswordFieldState extends State<PasswordField> {
               });
             },
           ),
-          hintText: AppLocalizations.of(context)!.translate('Password') ?? 'Password', // ترجمة النص هنا
+          hintText: AppLocalizations.of(context)!.translate('Password'),
           hintStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 16.sp,
-            color: const Color(0xff92979E),
+            color:  ColorApp.color4,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide:  BorderSide(color: ColorApp.white_color),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide:  BorderSide(color: ColorApp.white_color),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: const BorderSide(color: Colors.white),
+            borderSide:  BorderSide(color: ColorApp.white_color),
           ),
         ),
       ),

@@ -16,7 +16,7 @@ class SocialButtons extends StatelessWidget {
           text: AppLocalizations.of(context)!.translate('con') ,
           imagePath: ImagePaths.google,
         ),
-        SizedBox(height: 10.h),
+        SizedBox(height: 20.h),
         SocialButton(
           text: AppLocalizations.of(context)!.translate('con2') ,
           imagePath: ImagePaths.apple,
