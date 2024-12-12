@@ -13,8 +13,8 @@ class AiChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: AiChatAppBar(title: 'Good Morning'),
-      body: EmptyBody(),
+      appBar: AiChatAppBar(),
+      body: AiChatBody(),
     );
   }
 }

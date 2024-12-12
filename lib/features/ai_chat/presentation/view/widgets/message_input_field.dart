@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/localization/app_localization.dart';
+import '../../../../../core/themes/colors.dart';
+import '../../../../../core/utils/image_paths.dart';
+
 class MessageInputField extends StatefulWidget {
   @override
   _MessageInputFieldState createState() => _MessageInputFieldState();
@@ -23,79 +27,78 @@ class _MessageInputFieldState extends State<MessageInputField> {
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
-      padding:  EdgeInsets.symmetric(vertical: 30.0.h,horizontal: 7.w),
+      padding: EdgeInsets.symmetric(vertical: 30.0.h, horizontal: 7.w),
       child: Container(
         width: 400.w,
         height: 60.h,
         decoration: BoxDecoration(
-          color: Color(0xffd1dbf0),
+          color: ColorApp.color15,
           borderRadius: BorderRadius.circular(25.r),
           border: Border.all(
-            color: Color(0xffd1dbf0),
-            width: 0.5,
+            color: ColorApp.color15,
+            width: 0.5.w,
           ),
         ),
-        child:Row(
+        child: Row(
           children: [
-            // TextField
-            SizedBox(
-              width: 320.w,
-              height: 40.h,
-              child: Padding(
-                padding: EdgeInsets.only(left: 7.w, top: 3.h, bottom: 3.h),
+            // TextField section
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.w),
+                height: 40.h,
+                decoration: BoxDecoration(
+                  color: ColorApp.color9,
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
                 child: TextField(
                   controller: _controller,
+                  style: TextStyle(color: Colors.black, fontSize: 14.sp),
                   decoration: InputDecoration(
-                    hintStyle: TextStyle(color: Color(0xFFA8B9D5), fontSize: 14.sp),
-                    contentPadding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 8.h),
-                    filled: true,
-                    fillColor: Color(0xffA8B9D5),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(25.r),
-                      borderSide: BorderSide.none,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(25.r),
-                      borderSide: BorderSide(color: Color(0xffA8B9D5), width: 1.w),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(25.r),
-                      borderSide: BorderSide(color: Color(0xffA8B9D5), width: 1.w),
+                     hintStyle: TextStyle(color: Colors.grey, fontSize: 14.sp),
+                    border: InputBorder.none, // Remove all borders
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 8.h,
                     ),
                   ),
                 ),
               ),
             ),
 
-            SizedBox(width: 10.w),
-
+            // Icons (depending on typing state)
             if (_isTyping)
-              Image.asset(
-                "assets/images/share.png",
-                width: 24.w,
-                height: 24.h,
+              Padding(
+                padding: EdgeInsets.only(right: 10.w),
+                child: Image.asset(
+                  ImagePaths.shareEn2,
+                  width: 24.w,
+                  height: 24.h,
+                ),
               )
             else
               Row(
                 children: [
-                  Image.asset(
-                    "assets/images/chat/image.png",
-                    width: 24.w,
-                    height: 18.h,
+                  Padding(
+                    padding: EdgeInsets.only(right: 10.w),
+                    child: Image.asset(
+                      ImagePaths.img,
+                      width: 24.w,
+                      height: 18.h,
+                    ),
                   ),
-                  SizedBox(width: 10.w),
-                  Image.asset(
-                    "assets/images/chat/mic.png",
-                    width: 12.w,
-                    height: 22.h,
+                  Padding(
+                    padding: EdgeInsets.only(right: 10.w),
+                    child: Image.asset(
+                      ImagePaths.mic,
+                      width: 12.w,
+                      height: 22.h,
+                    ),
                   ),
                 ],
               ),
           ],
         ),
-
       ),
     );
   }

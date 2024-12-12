@@ -21,7 +21,7 @@ class HowToAppBar extends StatelessWidget implements PreferredSizeWidget {
 
         height: 128.h,
         decoration: BoxDecoration(
-          color: const Color(0xff19488E),
+          color:  ColorApp.color2,
 
           boxShadow:  [
             BoxShadow(
@@ -34,7 +34,11 @@ class HowToAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Padding(
           padding: const EdgeInsets.only(top: 9.0),
           child: AppBar(
-            leading: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
+            leading: IconButton(
+                onPressed: (){
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white)),
             backgroundColor: Colors.transparent,
             title: Text(
               title,

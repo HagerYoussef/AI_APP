@@ -1,71 +1,91 @@
+import 'package:ai_app/core/themes/colors.dart';
+import 'package:ai_app/core/utils/image_paths.dart';
+import 'package:ai_app/features/ai_chat/presentation/view/ai_chat_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AiChatAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title;
+import '../../../../core/localization/app_localization.dart';
 
-  const AiChatAppBar({Key? key, required this.title}) : super(key: key);
+class AiChatAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const AiChatAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(15.0.r),
-        bottomRight: Radius.circular(15.0.r),
-      ),
-      child: Container(
-        width: double.infinity,
-        height: 128.h,
-        color: const Color(0xff19488E),
-        child: Padding(
-          padding:  EdgeInsets.only(top: 20.h),
-          child: AppBar(
-            leading: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            title: ListTile(
-              contentPadding: EdgeInsets.zero,
-              leading: CircleAvatar(
-                radius: 20.r,
-                backgroundImage: const AssetImage('assets/images/chat/ai.png'),
-              ),
-              title: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    "Zaid",
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      color: Colors.white.withOpacity(0.7),
-                    ),
-                  ),
-                ],
-              ),
-              trailing: InkWell(
-                onTap: (){
-                  Navigator.pushNamed(context,"Voice Screen" );
-                },
-                child: CircleAvatar(
-                  radius: 24.r,
-                  backgroundColor: Colors.transparent,
-                  backgroundImage: const AssetImage('assets/images/chat/record.png'),
-                ),
-              ),
-            ),
+    return Container(
+      height: preferredSize.height,
+      decoration: BoxDecoration(
+        color:  ColorApp.color2,
+        borderRadius:  BorderRadius.only(
+          bottomRight: Radius.circular(15.r),
+          bottomLeft: Radius.circular(15.r),
+        ),
+        boxShadow:  [
+          BoxShadow(
+            color:ColorApp.shadow,
+            blurRadius: 8.8,
+            offset: const Offset(0, 4),
+          ),
+        ],
+        border:  Border(
+          bottom: BorderSide(
+            color:  ColorApp.color5,
+            width: 0.5.w,
           ),
         ),
+      ),
+      child: Row(
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child:IconButton(onPressed: (){
+              Navigator.pop(context);
+            }, icon: const Icon(
+              Icons.arrow_back_ios_new,
+              color: Colors.white,
+            )),
+          ),
+          Image.asset(
+            ImagePaths.ai,
+            width: 53.w,
+            height: 53.h,
+          ),
+          SizedBox(width: 10,),
+          Column(mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+
+              Text(AppLocalizations.of(context)!.translate('good'),
+              style: TextStyle(
+                fontSize: 20.sp,
+                color: ColorApp.white_color,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Cairo'
+
+              ),
+              ),
+              Text(AppLocalizations.of(context)!.translate('Ziad Williamson'),style: TextStyle(
+                fontWeight: FontWeight.w400,
+                  color: ColorApp.white_color,
+                fontSize: 12.sp
+              ),)
+            ],
+          ),
+          Spacer(),
+          Padding(
+            padding:  EdgeInsets.only(right: 8.w),
+            child: InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, "Voice Screen");
+                },
+                child: Image.asset(ImagePaths.record)),
+          ),
+        ],
       ),
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(128.h);
+  Size get preferredSize => const Size.fromHeight(88);
 }

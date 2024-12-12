@@ -23,6 +23,14 @@ class ColorApp {
   static Color shadow= const  Color(0xD184BCF0);
   static Color color11= const  Color(0xff505551);
   static Color color12= const  Color(0xff1A4B99);
+  static Color color13= const  Color(0xff586EE0);
+  static Color color14= const  Color(0xff3F454D);
+  static Color color15= const  Color(0xffd1dbf0);
+  static Color color16= const  Color(0xff3F454D);
+  static Color color17= const  Color(0xFF164992);
+  static Color color18= const  Color(0xFF5AA6F4);
+  static Color color19= const  Color(0xff164181);
+  static Color color20= const  Color(0xff536788);
 
 //0xff092147
 }

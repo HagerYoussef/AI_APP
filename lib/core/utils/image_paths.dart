@@ -28,4 +28,19 @@ class ImagePaths {
   static const String  circleProfile =    'assets/images/home/circle_profile.png';
   static const String  close =      "assets/images/home/drawer/close.png";
   static const String  share =      'assets/images/share.png';
+  static const String  share2 =      'assets/images/share2.png';
+  static const String  shareEn =      'assets/images/sharEn.png';
+  static const String  shareEn2 =      'assets/images/shareEn2.png';
+  static const String  chat =       "assets/images/chat/no.png";
+  static const String  img =        "assets/images/chat/image.png";
+  static const String  mic =         "assets/images/chat/mic.png";
+  static const String  ai =         "assets/images/chat/ai.png";
+  static const String  record =         "assets/images/chat/record.png";
+  static const String  new2 =         'assets/images/chat/new.jpeg';
+  static const String  new3 =         'assets/images/chat/new2.jpeg';
+  static const String  bubble =          "assets/images/chat/bubble.png";
+  static const String  voice =          "assets/images/chat/voice.png";
+  static const String  x =          "assets/images/chat/x.png";
+  static const String  data =            "assets/images/chat/data.png";
+  static const String  ciimg =            'assets/images/home/circle_profile.png';
  }

@@ -1,8 +1,10 @@
 
+import 'package:ai_app/core/utils/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/localization/app_localization.dart';
 import '../../../../core/themes/colors.dart';
 import '../../view_model/cubit/theme_cubit.dart';
 
@@ -12,18 +14,18 @@ class ProfileHeader extends StatelessWidget {
     return Row(
       children: [
         CircleAvatar(
-          radius: 40,
+          radius: 40.r,
           backgroundImage:
-          AssetImage('assets/images/home/circle_profile.png'),
+          const AssetImage(ImagePaths.ciimg),
         ),
-        SizedBox(width: 16),
+        SizedBox(width: 16.w),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             BlocBuilder<ThemeCubit, ThemeState>(
               builder: (context, state) {
                 return Text(
-                  'Ziad Mohamed',
+                  AppLocalizations.of(context)!.translate('ziad2'),
                   style: TextStyle(
                     fontSize: 19.68.sp,
                     fontWeight: FontWeight.w600,
@@ -38,7 +40,7 @@ class ProfileHeader extends StatelessWidget {
             BlocBuilder<ThemeCubit, ThemeState>(
               builder: (context, state) {
                 return Text(
-                  'zio.hamdy222@gmail.com',
+                  AppLocalizations.of(context)!.translate('email'),
                   style: TextStyle(
                     fontSize: 11.12.sp,
                     fontWeight: FontWeight.w600,
@@ -52,6 +54,11 @@ class ProfileHeader extends StatelessWidget {
             ),
           ],
         ),
+        const Spacer(),
+        const Padding(
+          padding: EdgeInsets.only(right: 10),
+          child: Icon(Icons.arrow_forward_ios),
+        )
       ],
     );
   }

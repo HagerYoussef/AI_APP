@@ -21,7 +21,9 @@ class GenerateImage extends StatelessWidget {
           children: [
             CustomTextField(hintText: AppLocalizations.of(context)!.translate('enter_text')),
             SizedBox(height: 20.h),
-            AnswerContainer(text: AppLocalizations.of(context)!.translate('image')),
+            AnswerContainer(text: AppLocalizations.of(context)!.translate('image')
+
+            ),
           ],
         ),
       ),

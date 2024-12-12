@@ -6,9 +6,7 @@
   "fast": "Fast and easy payment solution.",
   "arabai": "ArabAi is always with you!",
   "skip": "Skip",
-
-
-"LogIn":"Log In" ,
+  "LogIn": "Log In",
   "Register": "Register",
   "Login": "Log in",
   "we": "We are the best chat platform",
@@ -18,34 +16,28 @@
   "dont": "Don’t have an Account? ",
   "con": "Continue with Google",
   "con2": "Continue with Apple",
-  "full":"Full Name",
-  "forgetpass":"Forget Password",
+  "full": "Full Name",
+  "forgetpass": "Forget Password",
   "send": "Resend Code",
   "enter": "Enter Code",
   "plase": "Please enter the code we just sent you",
-
-
-
   "HowTo": "How To",
   "Code": "Code Generator",
   "CreatePre": "Create Presentation",
   "EmailWriter": "Email Writer",
   "TextSummerizer": "Text Summarizer",
   "EasyWriter": "Essay Writer",
-
-  "featureText":"You can enjoy some ArabAI features:",
+  "featureText": "You can enjoy some ArabAI features:",
   "HowTo2": "Generates step-by-step instructions for a given task.",
   "Code2": "Create code snippets based on given requirements.",
   "CreatePre2": "Make a presentation accurately and creatively.",
   "EmailWriter2": "Generate emails based on given prompts.",
   "TextSummerizer2": "Extract main ideas from given texts.",
   "EasyWriter2": "Generate human-like essays based on prompts.",
-
-  "pro":"Pro",
+  "pro": "Pro",
   "cold": "Get Gold Credits",
   "perime": "Premium",
   "Social": "Social",
-
   "create2": "Create Presentation",
   "answer": "Answer",
   "data": "Enter Your Data",
@@ -58,10 +50,23 @@
   "image": "Image",
   "howto": "How To",
   "enteryourquestion": "Enter Your Question",
-  "textSummrizer": "Text Summarizer"
+  "textSummrizer": "Text Summarizer",
+  "empty": "Welcome to the new\n ArabAI Chat",
+  "empty2": "Use the power of AI to find answers from the\nweb, create written content, and more.",
+  "Go": "Go ahead, I’m listening...",
+  "good": "Good Morning 👋",
+  "Ziad Williamson": "Ziad Williamson",
+  "tell": "Tell me about AI ?",
+  "hello": "Hello, How can i assist you?",
 
 
-
-
-
+  "ziad2": "Ziad Mohamed",
+  "email2": "zio.hamdy222@gmail.com",
+  "not": "Notifications",
+  "dark": "Dark mode",
+  "lan": "Language",
+  "pay": "Payment",
+  "hist": "History",
+  "help": "Help",
+  "log": "Log out"
 }

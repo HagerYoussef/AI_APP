@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/localization/app_localization.dart';
+import '../../../../../core/themes/colors.dart';
+import '../../../../../core/utils/image_paths.dart';
 import 'message_input_field.dart';
 
 class EmptyBody extends StatelessWidget {
@@ -9,48 +12,66 @@ class EmptyBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  "assets/images/chat/no.png",
-                  width: 210.74.w,
-                  height: 236.69.h,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 16.h),
-                  child: const Text(
-                    "Welcome to the new ArabAI Chat",
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
+       body: SafeArea(
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 80.h),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            ImagePaths.chat,
+                            width: 210.74.w,
+                            height: 236.69.h,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 16.h),
+                            child: Text(
+                              AppLocalizations.of(context)!.translate('empty'),
+                              style: TextStyle(
+                                color: ColorApp.color13,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20.sp,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 8.h),
+                            child: Text(
+                              AppLocalizations.of(context)!.translate('empty2'), style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w400,
+                                color: ColorApp.color14,
+                                fontSize: 14.sp,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    textAlign: TextAlign.center,
-                  ),
+                  ],
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 8.h),
-                  child: const Text(
-                    "Use the power of AI to find answers from the\nweb, create written content, and more.",
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
-
-           MessageInputField(),
-        ],
+            // حقل الإدخال في الأسفل
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 16.h),
+                child: MessageInputField(),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

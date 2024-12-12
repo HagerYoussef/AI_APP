@@ -48,7 +48,7 @@ class CustomNavBar extends StatelessWidget {
               height: 25.h,
             ),
             onPressed: () {
-
+Navigator.pushNamed(context, "Ai Chat");
             },
           ),
           IconButton(
@@ -58,7 +58,7 @@ class CustomNavBar extends StatelessWidget {
               height: 25.h,
             ),
             onPressed: () {
-
+Navigator.pushNamed(context, "Profile Screen");
             },
           ),
         ],

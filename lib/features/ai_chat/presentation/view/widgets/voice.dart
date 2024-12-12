@@ -1,5 +1,9 @@
+import 'package:ai_app/core/utils/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../core/localization/app_localization.dart';
+import '../../../../../core/themes/colors.dart';
 
 class VoicePage extends StatelessWidget {
   const VoicePage({super.key});
@@ -11,9 +15,9 @@ class VoicePage extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xff164181), Color(0xff536788)],
+            colors: [ColorApp.color19, ColorApp.color20],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -36,9 +40,9 @@ class VoicePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    "Go ahead, I’m listening...",
-                    style: TextStyle(
+                   Text(
+                    AppLocalizations.of(context)!.translate('Go'),
+                    style: const TextStyle(
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w400,
                       color: Colors.white,
@@ -47,7 +51,7 @@ class VoicePage extends StatelessWidget {
                   ),
                   SizedBox(height: 100.h),
                   Image.asset(
-                    "assets/images/chat/bubble.png",
+                    ImagePaths.bubble,
                     width: 276.w,
                     height: 356.h,
                   ),
@@ -62,17 +66,17 @@ class VoicePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.asset(
-                    "assets/images/chat/data.png",
+                  ImagePaths.data,
                     width: 40.w,
                     height: 40.h,
                   ),
                   Image.asset(
-                    "assets/images/chat/voice.png",
+                   ImagePaths.voice,
                     width: 162.w,
                     height: 162.h,
                   ),
                   Image.asset(
-                    "assets/images/chat/x.png",
+                    ImagePaths.x,
                     width: 40.w,
                     height: 40.h,
                   ),
