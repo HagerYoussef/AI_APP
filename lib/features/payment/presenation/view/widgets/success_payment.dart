@@ -34,7 +34,7 @@ class SuccessPayment extends StatelessWidget {
 
           isDarkMode
               ? Text(
-            "Payment Successful",
+            AppLocalizations.of(context)!.translate('paymentsuccess'),
             style: TextStyle(
               fontSize: 33.sp,
               fontWeight: FontWeight.w900,
@@ -52,7 +52,8 @@ class SuccessPayment extends StatelessWidget {
               end: Alignment.centerRight,
             ).createShader(bounds),
             child: Text(
-              "Payment Successful",
+              AppLocalizations.of(context)!.translate('paymentsuccess'),
+
               style: TextStyle(
                 fontSize: 33.sp,
                 fontWeight: FontWeight.w900,
