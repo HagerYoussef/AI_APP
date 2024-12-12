@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/themes/colors.dart';
+
 class CustomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String? title; // العنوان (اختياري)
-  final bool showLeading; // هل يظهر زر الرجوع؟
-  final IconData? leadingIcon; // أيقونة الرجوع (اختيارية)
-  final VoidCallback? onLeadingPressed; // وظيفة عند الضغط على زر الرجوع
-  final Widget? actionWidget; // الأكشن كوديجيت (اختياري)
+  final String? title;
+  final bool showLeading;
+  final IconData? leadingIcon;
+  final VoidCallback? onLeadingPressed;
+  final Widget? actionWidget;
 
   const CustomeAppBar({
     Key? key,
@@ -25,27 +27,30 @@ class CustomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         bottomRight: Radius.circular(15.0.r),
       ),
       child: Container(
-        width: 430.w,  // العرض الثابت 430px
-        height: 88.h,  // الارتفاع الثابت 88px
+        width: 430.w,
+        height: 88.h,
         decoration: BoxDecoration(
-          color: const Color(0xff19488E),
-          border: Border(
-            bottom: BorderSide(
-              color: const Color(0xFF184893D6), // اللون المستخدم في الحافة السفلى
-              width: 0.5, // سمك الحدود
-            ),
+          color:  ColorApp.color2,
+          borderRadius:  BorderRadius.only(
+            bottomRight: Radius.circular(15.r),
+            bottomLeft: Radius.circular(15.r),
           ),
-          boxShadow: [
+          boxShadow:  [
             BoxShadow(
-              color: const Color(0xFF194A76D1), // الشادو باللون المحدد
-              offset: Offset(0, 4),  // حركة الشادو عمودياً من الأسفل
-              blurRadius: 8.8.r, // تأثير الضبابية لجعل الشادو ناعماً
-              spreadRadius: 0, // الانتشار الأفقي
+              color:ColorApp.shadow,
+              blurRadius: 8.8,
+              offset: const Offset(0, 4),
             ),
           ],
+          border:  Border(
+            bottom: BorderSide(
+              color:  ColorApp.color5,
+              width: 0.5.w,
+            ),
+          ),
         ),
         child: Padding(
-          padding: EdgeInsets.only(top: 20.h, left: 11.w, right: 11.w), // الـ Padding حسب المتطلبات
+          padding: EdgeInsets.only(top: 20.h, left: 11.w, right: 11.w),
           child: AppBar(
             leading: showLeading
                 ? IconButton(
@@ -79,5 +84,5 @@ class CustomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(128.h);  // تحديد الحجم المفضل للـ AppBar
+  Size get preferredSize => Size.fromHeight(128.h);
 }

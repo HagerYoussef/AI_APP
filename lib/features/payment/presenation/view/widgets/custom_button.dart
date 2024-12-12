@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/themes/colors.dart';
+
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
@@ -32,8 +34,8 @@ final double w;
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0xff092147),
-                  Color(0xff1E54A6),
+                  ColorApp.home_color,
+                  ColorApp.color22,
                 ],
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
@@ -46,7 +48,7 @@ final double w;
                 text,
                 style: TextStyle(
                   fontSize: 16.sp,
-                  color: Colors.white,
+                  color: ColorApp.white_color,
                   fontWeight: FontWeight.bold,
                 ),
               ),

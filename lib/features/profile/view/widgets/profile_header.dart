@@ -55,9 +55,13 @@ class ProfileHeader extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        const Padding(
-          padding: EdgeInsets.only(right: 10),
-          child: Icon(Icons.arrow_forward_ios),
+         Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: InkWell(
+              onTap: (){
+                Navigator.pushNamed(context, "Edit Profile");
+              },
+              child: const Icon(Icons.arrow_forward_ios)),
         )
       ],
     );

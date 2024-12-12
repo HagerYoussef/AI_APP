@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/themes/colors.dart';
+import '../../../../../core/utils/image_paths.dart';
 import 'custom_drow_down_field.dart';
 import 'custom_label.dart';
 import 'custome_app_bar.dart';
@@ -12,7 +14,15 @@ class PaymentCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomeAppBar(),
+      appBar:  CustomeAppBar(
+        actionWidget: Text("+ Add New Card" ,
+        style: TextStyle(
+        fontFamily: "Robot",
+        fontWeight: FontWeight.w900,
+        fontSize: 15,
+        color:   ColorApp.white_color
+        ),),
+      ),
       body: Padding(
         padding: EdgeInsets.all(16.0.sp),
         child: Column(
@@ -43,7 +53,7 @@ class PaymentCardScreen extends StatelessWidget {
                   child: CustomDropdownField(
                     icon: Center(
                       child: Image.asset(
-                        "assets/images/payment/month.png",
+                        ImagePaths.month,
                         width: 75.w,
                         height: 24.h,
                       ),
@@ -64,7 +74,7 @@ class PaymentCardScreen extends StatelessWidget {
                   child: CustomDropdownField(
                     icon: Center(
                       child: Image.asset(
-                        "assets/images/payment/year.png",
+                       ImagePaths.year,
                         width: 75.w,
                         height: 24.h,
                       ),
@@ -85,7 +95,7 @@ class PaymentCardScreen extends StatelessWidget {
                   child: CustomTextField(
                     hint: 'CVV',
                     obscureText: true,
-                    suffixIcon: Image.asset("assets/images/payment/eye-slash.png"),
+                    suffixIcon: Image.asset(ImagePaths.eye2),
                     keyboardType: TextInputType.number,
                   ),
                 ),
@@ -94,7 +104,9 @@ class PaymentCardScreen extends StatelessWidget {
             const Spacer(),
             Padding(
               padding: EdgeInsets.only(bottom: 40.h),
-              child: CustomButton(text: "Confirm Payment", onPressed: () {}, w: 317.w,),
+              child: CustomButton(text: "Confirm Payment", onPressed: () {
+                Navigator.pushNamed(context, "Success Screen");
+              }, w: 317.w,),
             ),
           ],
         ),

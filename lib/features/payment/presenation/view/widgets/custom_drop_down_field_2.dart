@@ -1,3 +1,4 @@
+import 'package:ai_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,7 +25,7 @@ class CustomDropdownField2 extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 4.w),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
-          border: Border.all(color: Colors.grey),
+          border: Border.all(color: ColorApp.grey),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,3 +1,4 @@
+import 'package:ai_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,7 +13,7 @@ class PaymentOptionWidget extends StatelessWidget {
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(8.r),
         border: Border.all(
-          color: const Color(0xFF092147),
+          color:  ColorApp.home_color,
           width: 2.w,
         ),
       ),
@@ -43,8 +44,8 @@ class PaymentOptionWidget extends StatelessWidget {
                 value: true,
                 onChanged: (bool value) {},
                 activeColor: Colors.white,
-                inactiveThumbColor: const Color(0xFF313539),
-                inactiveTrackColor: const Color(0xFF313539),
+                inactiveThumbColor:  ColorApp.color28,
+                inactiveTrackColor:  ColorApp.color28,
               ),
             ),
           )

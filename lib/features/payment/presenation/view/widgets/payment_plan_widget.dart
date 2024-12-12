@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/themes/colors.dart';
+
 class PaymentPlanWidget extends StatefulWidget {
   @override
   _PaymentPlanWidgetState createState() => _PaymentPlanWidgetState();
@@ -18,10 +20,10 @@ class _PaymentPlanWidgetState extends State<PaymentPlanWidget> {
           height: 61.h,
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
           decoration: BoxDecoration(
-            color: isSelected1 ? const Color(0xFF1B253C) : Colors.transparent,
+            color: isSelected1 ?  ColorApp.color29 : Colors.transparent,
             borderRadius: BorderRadius.circular(12.r),
             border: Border.all(
-              color: const Color(0xFF092147),
+              color:  ColorApp.home_color,
               width: 2.w,
             ),
           ),
@@ -40,15 +42,15 @@ class _PaymentPlanWidgetState extends State<PaymentPlanWidget> {
                   width: 30.w,
                   height: 30.h,
                   decoration: BoxDecoration(
-                    color: isSelected1 ? const Color(0xFF1B253C) : Colors.transparent,
+                    color: isSelected1 ?  ColorApp.color32 : Colors.transparent,
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: isSelected1 ? Colors.blue.shade800 : Colors.white,
+                      color: ColorApp.white_color,
                       width: 2.w,
                     ),
                   ),
                   child: isSelected1
-                      ? const Icon(Icons.check, color: Colors.white, size: 9)
+                      ?  Icon(Icons.check, color: ColorApp.white_color, size: 9)
                       : null,
                 ),
               ),
@@ -58,7 +60,7 @@ class _PaymentPlanWidgetState extends State<PaymentPlanWidget> {
                   width: 300.w,
                   height: 21.h,
                   child: Text(
-                    'Free Trial Enable',
+                    'Free 3-day trial, then \$3.99/month',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w800,
@@ -77,10 +79,10 @@ class _PaymentPlanWidgetState extends State<PaymentPlanWidget> {
           height: 61.h,
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
           decoration: BoxDecoration(
-            color: isSelected2 ? const Color(0xFF1B253C) : Colors.transparent,
+            color: isSelected2?  ColorApp.color29 : Colors.transparent,
             borderRadius: BorderRadius.circular(12.r),
             border: Border.all(
-              color: const Color(0xFF092147),
+              color:  ColorApp.home_color,
               width: 2.w,
             ),
           ),
@@ -99,15 +101,15 @@ class _PaymentPlanWidgetState extends State<PaymentPlanWidget> {
                   width: 30.w,
                   height: 30.h,
                   decoration: BoxDecoration(
-                    color: isSelected2 ? const Color(0xFF1B253C) : Colors.transparent,
+                    color: isSelected2 ?  ColorApp.color32 : Colors.transparent,
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: isSelected2 ? Colors.blue.shade800 : Colors.white,
+                      color: ColorApp.white_color,
                       width: 2.w,
                     ),
                   ),
                   child: isSelected2
-                      ? const Icon(Icons.check, color: Colors.white, size: 18)
+                      ?  Icon(Icons.check, color: ColorApp.white_color, size: 9)
                       : null,
                 ),
               ),
@@ -117,7 +119,7 @@ class _PaymentPlanWidgetState extends State<PaymentPlanWidget> {
                   width: 300.w,
                   height: 21.h,
                   child: Text(
-                    'Free Trial Enable',
+                    'Free 3-day trial, then \$3.99/month',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w800,

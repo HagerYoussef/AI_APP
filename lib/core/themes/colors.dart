@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class ColorApp {
   static Color white_color = const Color(0xffFFFFFF);
   static Color black_color = const Color(0xff000000);
@@ -31,6 +33,18 @@ class ColorApp {
   static Color color18= const  Color(0xFF5AA6F4);
   static Color color19= const  Color(0xff164181);
   static Color color20= const  Color(0xff536788);
+  static Color color21= const  Color(0xffB42F2F);
+  static Color color22= const  Color(0xff1E54A6);
+  static Color color23= const  Color(0xff5055518C);
+  static Color color24= const  Color(0xFF184893D6);
+  static Color color25= const  Color(0xFF194A76D1);
+  static Color color26= const  Color(0xFF0B254E);
+  static Color color27= const  Color(0xFF1D52A2);
+  static Color color28= const  Color((0xFF313539));
+  static Color color29= const  Color(0xFF1B253C);
+  static Color color30= const  Color(0xFF1C51A0);
+  static Color color31= const  Color(0xFF0B2651);
+  static Color color32= const  Color(0xFF0049F5);
+  static Color grey=   Colors.grey;
 
-//0xff092147
 }

@@ -5,6 +5,8 @@ import 'package:ai_app/features/payment/presenation/view/widgets/payment_plan_wi
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/utils/image_paths.dart';
+
 class PaymentScreen extends StatelessWidget {
   static const String routeName = 'Payment Screen';
 
@@ -16,7 +18,9 @@ class PaymentScreen extends StatelessWidget {
         height: 932.h,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/payment/back_ground.png'),
+            image: AssetImage(
+              ImagePaths.back_ground
+            ),
             fit: BoxFit.cover,
           ),
         ),
@@ -31,7 +35,7 @@ class PaymentScreen extends StatelessWidget {
                     height: 915.h,
                     decoration: BoxDecoration(
                       image: const DecorationImage(
-                        image: AssetImage('assets/images/payment/blur.png'),
+                        image: AssetImage(ImagePaths.blur),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(16.r),
@@ -46,20 +50,20 @@ class PaymentScreen extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(top: 55.h),
                                 child: Image.asset(
-                                  'assets/images/payment/permie.png',
+                                 ImagePaths.per,
                                   height: 55.45.h,
                                   width: 157.w,
                                 ),
                               ),
                               Image.asset(
-                                'assets/images/payment/woman.png',
+                                ImagePaths.woman,
                                 height: 357.h,
                                 width: 203.w,
                               ),
                             ],
                           ),
                           SizedBox(height: 5.h),
-                          Image.asset("assets/images/payment/some.png"),
+                          Image.asset(ImagePaths.some),
                           SizedBox(height: 20.h),
                           PaymentOptionWidget(),
                           SizedBox(height: 20.h),

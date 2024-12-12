@@ -1,75 +1,87 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/localization/app_localization.dart';
+import '../../../core/themes/colors.dart';
+import '../../../core/utils/image_paths.dart';
 import '../../payment/presenation/view/widgets/custom_button.dart';
 
 class EditProfilePage extends StatelessWidget {
   static const String routeName = 'Edit Profile';
 
-  final TextEditingController nameController = TextEditingController(text: 'Ziad Mohamed');
-  final TextEditingController usernameController = TextEditingController(text: 'Ziad hamdy12');
-  final TextEditingController phoneController = TextEditingController(text: '01023456789');
-  final TextEditingController emailController = TextEditingController(text: 'Ziad hamdy222@gmail.com');
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
 
+    final TextEditingController nameController = TextEditingController(
+        text: AppLocalizations.of(context)!.translate('ziad2'));
+    final TextEditingController usernameController = TextEditingController(
+        text: AppLocalizations.of(context)!.translate('ziad3'));
+    final TextEditingController phoneController = TextEditingController(
+        text: AppLocalizations.of(context)!.translate('phone'));
+    final TextEditingController emailController =
+    TextEditingController(text: 'Ziad hamdy222@gmail.com');
+
+    return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0.h),
         child: SingleChildScrollView(
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 15),
+                padding: EdgeInsets.only(top: 15.h),
                 child: Align(
-                  alignment: Alignment.topLeft,
+                  alignment: AppLocalizations.of(context)!.locale.languageCode == 'ar'
+                      ? Alignment.topRight
+                      : Alignment.topLeft,
                   child: InkWell(
-                    child: const Text("Cancel",
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20,
-                      color:Color(0xffB42F2F)
-                    ),
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: Text(
+                      AppLocalizations.of(context)!.translate('cancel'),
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20.sp,
+                        color: ColorApp.color21,
+                      ),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 30),
 
-              // صورة البروفايل
-              const CircleAvatar(
-                radius: 92,
-                backgroundImage: AssetImage('assets/images/home/circle_profile.png'),
+              SizedBox(height: 30.h),
+              CircleAvatar(
+                radius: 92.r,
+                backgroundImage: AssetImage(ImagePaths.profile),
               ),
-              const SizedBox(height: 20),
-
-              // الحقول المدخلة
+              SizedBox(height: 20.h),
               _buildCustomTextField(
                 controller: nameController,
-                label: 'Name',
-                imageUrl: 'assets/images/login/person.png',
+                label: AppLocalizations.of(context)!.translate('name'),
+                imageUrl: ImagePaths.person3,
               ),
               _buildCustomTextField(
                 controller: usernameController,
-                label: 'Username',
-                imageUrl: 'assets/images/login/person.png',
+                label: AppLocalizations.of(context)!.translate('usr'),
+                imageUrl: ImagePaths.person3,
               ),
               _buildCustomTextField(
                 controller: phoneController,
-                label: 'Phone number',
-                imageUrl: 'assets/images/login/Call.png',
+                label: AppLocalizations.of(context)!.translate('phonenum'),
+                imageUrl: ImagePaths.call,
               ),
               _buildCustomTextField(
                 controller: emailController,
-                label: 'Email Address',
-                imageUrl: 'assets/images/login/email.png',
+                label: AppLocalizations.of(context)!.translate('emailAdd'),
+                imageUrl: ImagePaths.email2,
               ),
-
-              const SizedBox(height: 30),
-
-              CustomButton(text: 'Save', onPressed: () {  }, w: 357.w,)
+              SizedBox(height: 30.h),
+              CustomButton(
+                text: AppLocalizations.of(context)!.translate('sv'),
+                onPressed: () {},
+                w: 357.w,
+              ),
             ],
           ),
         ),
@@ -77,49 +89,51 @@ class EditProfilePage extends StatelessWidget {
     );
   }
 
-  // ميثود لإنشاء TextField بشكل مخصص
   Widget _buildCustomTextField({
     required TextEditingController controller,
     required String label,
     required String imageUrl,
   }) {
     return Padding(
-      padding:  const EdgeInsets.only(bottom: 16.0),
+      padding: const EdgeInsets.only(bottom: 16.0),
       child: Container(
-
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: const Color(0xff19488E)),
+          borderRadius: BorderRadius.circular(10.r),
+          border: Border.all(color: ColorApp.color2),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 10,left: 15),
+              padding: EdgeInsets.only(top: 10.h, left: 15.w),
               child: Row(
                 children: [
                   Image.asset(
-                    imageUrl, // الصورة
-                    width: 24,
-                    height: 24,
+                    imageUrl,
+                    width: 24.w,
+                    height: 24.h,
                   ),
-                  const SizedBox(width: 5,),
+                  SizedBox(width: 5.w),
                   Text(
-                    label, // النص
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w400,fontFamily: 'Nunito Sans',color: Color(0xff92979E)),
+                    label,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Nunito Sans',
+                      color: ColorApp.color4,
+                    ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Container(
-                width: 250,
-
+              padding: EdgeInsets.symmetric(horizontal: 30.w),
+              child: SizedBox(
+                width: 250.w,
                 child: TextField(
                   controller: controller,
                   decoration: const InputDecoration(
-                    border: InputBorder.none, // إزالة الحدود الافتراضية
+                    border: InputBorder.none,
                   ),
                 ),
               ),

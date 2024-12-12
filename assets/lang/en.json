@@ -68,5 +68,15 @@
   "pay": "Payment",
   "hist": "History",
   "help": "Help",
-  "log": "Log out"
+  "log": "Log out",
+
+
+  "ziad3": "Ziad hamdy12",
+  "phone": "01023456789",
+ "cancel": "Cancel",
+  "name": "Name",
+  "usr": "Username",
+  "phonenum": "Phone number",
+  "emailAdd": "Email Address",
+  "sv": "Save"
 }

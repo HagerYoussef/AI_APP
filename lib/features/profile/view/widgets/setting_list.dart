@@ -47,7 +47,7 @@ class SettingsList extends StatelessWidget {
             icon: Icons.payment,
             title:   AppLocalizations.of(context)!.translate('pay'),
             onTap: () {
-              Navigator.pushNamed(context, "Ai Chat");
+              Navigator.pushNamed(context, "Payment Screen");
             },
           ),
           SettingsTile(
