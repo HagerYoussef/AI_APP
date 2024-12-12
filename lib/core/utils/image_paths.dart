@@ -59,5 +59,8 @@ class ImagePaths {
   static const String eye2 =  "assets/images/payment/eye-slash.png";
   static const String image11 =   'assets/images/payment/sucess.png';
   static const String image12 =   "assets/images/payment/button_white.png";
+  static const String image13 =   "assets/images/img.png";
+  static const String month2 =   "assets/images/month2.png";
+  static const String year2 =   "assets/images/year2.png";
 
 }

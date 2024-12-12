@@ -78,5 +78,18 @@
   "usr": "Username",
   "phonenum": "Phone number",
   "emailAdd": "Email Address",
-  "sv": "Save"
+  "sv": "Save",
+
+
+  "add": "+ Add New Card",
+  "card": "Card Number",
+  "enter2":"Enter 12 digit card number",
+  "Hol": "Card Holder’s Name",
+  "nameCard": "Name on Card",
+  "valid": "Valid Thru                                       CVV",
+  "confirm": "Confirm Payment",
+  "cvv": "CVV",
+  "paymentsuccess": "Payment Successful",
+  "after": "After we receive the payment, \nyou will receive a confirmation email,\nTransaction ID: 39250623782",
+  "back": "Back to Home"
 }

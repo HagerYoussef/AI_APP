@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/localization/app_localization.dart';
 import '../../../../../core/themes/colors.dart';
 import '../../../../../core/utils/image_paths.dart';
 import 'custom_drow_down_field.dart';
@@ -14,48 +15,53 @@ class PaymentCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  CustomeAppBar(
-        actionWidget: Text("+ Add New Card" ,
-        style: TextStyle(
-        fontFamily: "Robot",
-        fontWeight: FontWeight.w900,
-        fontSize: 15,
-        color:   ColorApp.white_color
-        ),),
+      appBar: CustomeAppBar(
+        actionWidget: Text(
+          AppLocalizations.of(context)!.translate('add'),
+          style: TextStyle(
+              fontFamily: "Robot",
+              fontWeight: FontWeight.w900,
+              fontSize: 15,
+              color: ColorApp.white_color),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0.sp),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            const CustomLabel(title: "Card Number"),
+            CustomLabel(
+              title: AppLocalizations.of(context)!.translate('card'),
+            ),
             SizedBox(height: 10.h),
-            const CustomTextField(
-              hint: 'Enter 12 digit card number',
+            CustomTextField(
+              hint: AppLocalizations.of(context)!.translate('enter2'),
               keyboardType: TextInputType.number,
             ),
             SizedBox(height: 30.h),
-
-            const CustomLabel(title: "Card Holder’s Name"),
+            CustomLabel(
+              title: AppLocalizations.of(context)!.translate('Hol'),
+            ),
             SizedBox(height: 10.h),
-            const CustomTextField(
-              hint: 'Name on Card',
+            CustomTextField(
+              hint: AppLocalizations.of(context)!.translate('nameCard'),
             ),
             SizedBox(height: 30.h),
-
-            const CustomLabel(title: "Valid Thru                                        CVV"),
+            CustomLabel(
+              title: AppLocalizations.of(context)!.translate('valid'),
+            ),
             SizedBox(height: 10.h),
             Row(
               children: [
-
                 Expanded(
                   child: CustomDropdownField(
                     icon: Center(
                       child: Image.asset(
-                        ImagePaths.month,
-                        width: 75.w,
-                        height: 24.h,
+                        Localizations.localeOf(context).languageCode == 'ar'
+                            ? ImagePaths.month2
+                            : ImagePaths.month,
+                        height: 61.h,
+                        width: 317.w,
                       ),
                     ),
                     items: List.generate(12, (index) {
@@ -69,14 +75,15 @@ class PaymentCardScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 8.w),
-
                 Expanded(
                   child: CustomDropdownField(
                     icon: Center(
                       child: Image.asset(
-                       ImagePaths.year,
-                        width: 75.w,
-                        height: 24.h,
+                        Localizations.localeOf(context).languageCode == 'ar'
+                            ? ImagePaths.year2
+                            : ImagePaths.year,
+                        height: 61.h,
+                        width: 317.w,
                       ),
                     ),
                     items: List.generate(10, (index) {
@@ -90,7 +97,6 @@ class PaymentCardScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 8.w),
-
                 Expanded(
                   child: CustomTextField(
                     hint: 'CVV',
@@ -104,9 +110,13 @@ class PaymentCardScreen extends StatelessWidget {
             const Spacer(),
             Padding(
               padding: EdgeInsets.only(bottom: 40.h),
-              child: CustomButton(text: "Confirm Payment", onPressed: () {
-                Navigator.pushNamed(context, "Success Screen");
-              }, w: 317.w,),
+              child: CustomButton(
+                text: AppLocalizations.of(context)!.translate('confirm'),
+                onPressed: () {
+                  Navigator.pushNamed(context, "Success Screen");
+                },
+                w: 317.w,
+              ),
             ),
           ],
         ),

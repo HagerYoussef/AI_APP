@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/localization/app_localization.dart';
 import '../../../../../core/themes/colors.dart';
 import '../../../../profile/view_model/cubit/theme_cubit.dart';
 
@@ -65,7 +66,8 @@ class SuccessPayment extends StatelessWidget {
 
 
         Text(
-          "After we receive the payment,\n you will receive a confirmation email,\n Transaction ID: 39250623782",
+            AppLocalizations.of(context)!.translate('after'),
+
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 16.sp,
@@ -85,10 +87,20 @@ class SuccessPayment extends StatelessWidget {
 
             CustomButton(
               onPressed: () {},
-              text: 'Back to Home', w: 317.w,
+              text:  AppLocalizations.of(context)!.translate('back'),
+               w: 317.w,
             ),
             SizedBox(height: 30.h),
-            Image.asset(ImagePaths.image12,height: 61.h,width: 317.w,)
+            InkWell(
+              child: Image.asset(
+                Localizations.localeOf(context).languageCode == 'ar'
+                    ? ImagePaths.image13
+                    : ImagePaths.image12,
+                height: 61.h,
+                width: 317.w,
+              ),
+            )
+
           ],
         ),
       ),
