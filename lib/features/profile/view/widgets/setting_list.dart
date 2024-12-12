@@ -5,7 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/localization/app_localization.dart';
 import '../../../../core/themes/colors.dart';
+import '../../../small_widgets/log_out.dart';
 import '../../view_model/cubit/theme_cubit.dart';
+import '../profile.dart';
 
 class SettingsList extends StatelessWidget {
   @override
@@ -59,7 +61,7 @@ class SettingsList extends StatelessWidget {
                 },
                 icon: const Icon(Icons.arrow_forward_ios)),
             onTap: () {
-              Navigator.pushNamed(context, "Home Page");
+              Navigator.pushNamed(context, "History Screen");
             },
           ),
           SettingsTile(
@@ -67,7 +69,7 @@ class SettingsList extends StatelessWidget {
             title:   AppLocalizations.of(context)!.translate('help'),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
-              Navigator.pushNamed(context, "Home Page");
+
             },
           ),
           ListTile(
@@ -80,7 +82,17 @@ class SettingsList extends StatelessWidget {
                       ? Colors.white
                       : ColorApp.profile_color,
                 )),
-            trailing: const Icon(Icons.logout),
+            trailing: InkWell(
+                onTap: (){
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return LogOutDialog();
+                    },
+                  );
+
+                },
+                child: const Icon(Icons.logout)),
           )
         ],
       );

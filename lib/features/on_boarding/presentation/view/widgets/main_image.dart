@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 class MainImage extends StatelessWidget {
   final String imagePath;
 
@@ -17,7 +16,7 @@ class MainImage extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(imagePath),
-            fit: BoxFit.cover,
+            fit: BoxFit.contain,
           ),
         ),
       ),

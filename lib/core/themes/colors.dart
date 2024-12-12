@@ -35,9 +35,9 @@ class ColorApp {
   static Color color20= const  Color(0xff536788);
   static Color color21= const  Color(0xffB42F2F);
   static Color color22= const  Color(0xff1E54A6);
-  static Color color23= const  Color(0xff5055518C);
-  static Color color24= const  Color(0xFF184893D6);
-  static Color color25= const  Color(0xFF194A76D1);
+  static Color color23= const  Color(0xff5055518c);
+  static Color color24= const  Color(0xff184893d6);
+  static Color color25= const  Color(0xff194a76d1);
   static Color color26= const  Color(0xFF0B254E);
   static Color color27= const  Color(0xFF1D52A2);
   static Color color28= const  Color((0xFF313539));
@@ -45,6 +45,12 @@ class ColorApp {
   static Color color30= const  Color(0xFF1C51A0);
   static Color color31= const  Color(0xFF0B2651);
   static Color color32= const  Color(0xFF0049F5);
+  static Color color33= const  Color(0xFF1b3e76);
+  static Color color34= const  Color(0xffba3027);
+  static Color color35= const  Color(0xff0C2752);
+  static Color color36= const  Color(0xff1D53A2);
+  static Color color37= const  Color(0xFF227C88);
+  static Color color38= const  Color(0xFF19488E);
   static Color grey=   Colors.grey;
 
 }

@@ -63,7 +63,7 @@ class LoginView extends StatelessWidget {
                     SizedBox(height: 40.h),
                     AuthButton(
                       onTap: () {
-                        Navigator.pushNamed(context, 'Home Screen');
+                        Navigator.pushNamed(context, 'Home Page');
                       },
                       buttonText: AppLocalizations.of(context)!.translate('LogIn')
                     ),

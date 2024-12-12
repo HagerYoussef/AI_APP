@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/localization/app_localization.dart';
+import '../../../../core/themes/colors.dart';
 import '../view_model/cubit/language_cubit.dart';
 
 class LanguageSelectionPage extends StatefulWidget {
@@ -16,97 +18,94 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Language',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-              ),
-            ),
-            const SizedBox(height: 20),
-
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedLanguage = 'English';
-                });
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: selectedLanguage == 'English' ? Colors.blue.shade100 : Colors.white,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: selectedLanguage == 'English' ? Colors.blue : Colors.grey, // Border color
-                    width: 2, // Border width for clarity
+      backgroundColor: ColorApp.color33,
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(20.0),
+          width: double.infinity,
+          height: double.infinity,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Text(
+                  AppLocalizations.of(context)!.translate('Language'),
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: ColorApp.home_color,
                   ),
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'English',
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
-                    ),
-                    if (selectedLanguage == 'English')
-                      const Icon(
-                        Icons.check,
-                        size: 20,
-                        color: Colors.green,
-                      ),
-                  ],
-                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            // وضع اللغة العربية بعد الإنجليزية
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedLanguage = 'Arabic';
+              const SizedBox(height: 20),
+              _buildLanguageOption(
+                context: context,
+                language: AppLocalizations.of(context)!.translate('English'),
+                isSelected: selectedLanguage == 'English',
+                onTap: () {
+                  setState(() {
+                    selectedLanguage = 'English';
+                  });
                   final languageCubit = BlocProvider.of<LanguageCubit>(context);
-                  final currentLocale = Localizations.localeOf(context).languageCode;
-                  String newLanguage = currentLocale == 'en' ? 'ar' : 'en';
+                  final newLanguage = 'en';
                   languageCubit.changeLanguage(newLanguage);
-                });
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: selectedLanguage == 'Arabic' ? Colors.blue.shade100 : Colors.white,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: selectedLanguage == 'Arabic' ? Colors.blue : Colors.grey, // Border color
-                    width: 2, // Border width for clarity
-                  ),
-                ),
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Arabic',
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
-                    ),
-                    if (selectedLanguage == 'Arabic')
-                      const Icon(
-                        Icons.check,
-                        size: 20,
-                        color: Colors.green,
-                      ),
-                  ],
-                ),
+                },
+              ),
+              const SizedBox(height: 10),
+              _buildLanguageOption(
+                context: context,
+                language: AppLocalizations.of(context)!.translate('Arabic'),
+                isSelected: selectedLanguage == 'Arabic',
+                onTap: () {
+                  setState(() {
+                    selectedLanguage = 'Arabic';
+                  });
+                  final languageCubit = BlocProvider.of<LanguageCubit>(context);
+                  final newLanguage = 'ar';
+                  languageCubit.changeLanguage(newLanguage);
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLanguageOption({
+    required BuildContext context,
+    required String language,
+    required bool isSelected,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: Colors.grey,
+            width: 2,
+          ),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              language,
+              style: const TextStyle(
+                fontSize: 18,
               ),
             ),
+            if (isSelected)
+              Icon(
+                Icons.check,
+                size: 20,
+                color: ColorApp.profile_color,
+              ),
           ],
         ),
       ),

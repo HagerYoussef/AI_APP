@@ -44,8 +44,10 @@ class ForgetPassword extends StatelessWidget {
                   const EmailField(),
                   SizedBox(height: 20.h),
                   AuthButton(
-                    onTap: () {},
-                    buttonText: AppLocalizations.of(context)!.translate('send') ,
+                    onTap: () {
+                      Navigator.pushNamed(context,"Enter Code");
+                    },
+                    buttonText: AppLocalizations.of(context)!.translate('send2') ,
                   ),
                 ]),
               ),

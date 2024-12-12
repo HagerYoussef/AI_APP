@@ -58,9 +58,29 @@ class ImagePaths {
   static const String year =  "assets/images/payment/year.png";
   static const String eye2 =  "assets/images/payment/eye-slash.png";
   static const String image11 =   'assets/images/payment/sucess.png';
+  static const String image13 =   'assets/images/on_boarding/ellipse/Ellipse 7.png';
+  static const String image14 =   'assets/images/on_boarding/ellipse/Ellipse 6 (1).png';
   static const String image12 =   "assets/images/payment/button_white.png";
-  static const String image13 =   "assets/images/img.png";
+  static const String image15 =   'assets/images/on_boarding/ellipse/Ellipse 5.png';
+  static const String image16 =   'assets/images/on_boarding/ellipse/Ellipse 4.png';
+  static const String image17 =   'assets/images/on_boarding/ellipse/Ellipse 3.png';
+  static const String image18 =   'assets/images/payment/download (3).png';
+
+  static const String image19 =   'assets/images/profile/arabic_dark.png';
+  static const String image20=   'assets/images/profile/arabic_light.png';
+  static const String image21 =   'assets/images/profile/english_dark.png';
+  static const String image22 =   'assets/images/profile/english_light.png';
+
   static const String month2 =   "assets/images/month2.png";
   static const String year2 =   "assets/images/year2.png";
+  static const String delete =   "assets/images/delete.png";
+
+  static const String history_img2 =   "assets/images/history_img2.png";
+  static const String on_1 =   "assets/images/on_boarding/on_boarding_1.png";
+  static const String on_2 =   "assets/images/on_boarding/on_boarding_2.png";
+  static const String on_3 =  "assets/images/on_boarding/on_boarding_3.png";
+  static const String on_4 =   "assets/images/on_boarding/on_boarding_4.png";
+  static const String on_5 =   "assets/images/on_boarding/on_boarding_5.png";
+  static const String on_6 =   "assets/images/on_boarding/on_boarding_6.png";
 
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
+import '../../../../../core/themes/colors.dart';
+
 class NextButton extends StatelessWidget {
   final int currentPage;
   final int pageCount;
@@ -21,19 +23,22 @@ class NextButton extends StatelessWidget {
     return isLastPage
         ? GestureDetector(
       onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-        decoration: BoxDecoration(
-          color: const Color(0xFF536788),
-          borderRadius: BorderRadius.circular(25.r),
-        ),
-        child: Center(
-          child: Text(
-            "Get Started",
-            style: TextStyle(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+      child: Directionality(
+        textDirection: TextDirection.ltr,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+          decoration: BoxDecoration(
+            color:  ColorApp.color20,
+            borderRadius: BorderRadius.circular(25.r),
+          ),
+          child: Center(
+            child: Text(
+              "Get Started",
+              style: TextStyle(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
@@ -45,8 +50,8 @@ class NextButton extends StatelessWidget {
         radius: 29.w,
         lineWidth: 3.w,
         percent: (currentPage + 1) / 4,
-        progressColor: Colors.white,
-        backgroundColor: Colors.grey,
+        progressColor: ColorApp.white_color,
+        backgroundColor: ColorApp.grey,
         circularStrokeCap: CircularStrokeCap.round,
         center: Container(
           width: 42.w,
@@ -58,10 +63,12 @@ class NextButton extends StatelessWidget {
           child: Container(
             width: 5.45.w,
             height: 10.9.h,
-            child: Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: const Color(0xFF536788),
-
+            child:  Directionality(
+              textDirection: TextDirection.ltr,
+              child: Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: ColorApp.color20,
+              ),
             ),
           ),
         ),

@@ -22,6 +22,8 @@ import 'features/payment/presenation/view/widgets/success_payment.dart';
 import 'features/profile/view/edit_profile.dart';
 import 'features/profile/view/profile.dart';
 import 'features/profile/view_model/cubit/theme_cubit.dart';
+import 'features/small_widgets/clear_all.dart';
+import 'features/small_widgets/log_out.dart';
 import 'features/some_screens/presenation/view/create_presentation.dart';
 import 'features/some_screens/presenation/view/easy_writer.dart';
 import 'features/some_screens/presenation/view/email_writer.dart';
@@ -111,9 +113,11 @@ class MyApp extends StatelessWidget {
                         SuccessPayment.routeName: (_) =>  SuccessPayment(),
                         EditProfilePage.routeName: (_) =>  EditProfilePage(),
                         History.routeName: (_) =>  History(),
+                        LogOutDialog.routeName: (_) =>  LogOutDialog(),
                         LanguageSelectionPage.routeName: (_) =>  LanguageSelectionPage(),
+                        ClearAll.routeName: (_) =>  ClearAll(),
                       },
-                      initialRoute: ProfileScreen.routeName,
+                      initialRoute: SplashView.routeName,
                     );
                   },
                 );

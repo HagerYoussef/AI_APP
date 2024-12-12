@@ -11,7 +11,6 @@ class EditProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final TextEditingController nameController = TextEditingController(
         text: AppLocalizations.of(context)!.translate('ziad2'));
     final TextEditingController usernameController = TextEditingController(
@@ -19,7 +18,7 @@ class EditProfilePage extends StatelessWidget {
     final TextEditingController phoneController = TextEditingController(
         text: AppLocalizations.of(context)!.translate('phone'));
     final TextEditingController emailController =
-    TextEditingController(text: 'Ziad hamdy222@gmail.com');
+        TextEditingController(text: 'Ziad hamdy222@gmail.com');
 
     return Scaffold(
       body: Padding(
@@ -30,11 +29,12 @@ class EditProfilePage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: 15.h),
                 child: Align(
-                  alignment: AppLocalizations.of(context)!.locale.languageCode == 'ar'
-                      ? Alignment.topRight
-                      : Alignment.topLeft,
+                  alignment:
+                      AppLocalizations.of(context)!.locale.languageCode == 'ar'
+                          ? Alignment.topRight
+                          : Alignment.topLeft,
                   child: InkWell(
-                    onTap: (){
+                    onTap: () {
                       Navigator.pop(context);
                     },
                     child: Text(
@@ -49,12 +49,17 @@ class EditProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
-
               SizedBox(height: 30.h),
-              CircleAvatar(
-                radius: 92.r,
-                backgroundImage: AssetImage(ImagePaths.profile),
-              ),
+              Image.asset(
+                  Theme.of(context).brightness == Brightness.light
+                      ? Localizations.localeOf(context).languageCode == 'ar'
+                          ? ImagePaths.image20
+                          : ImagePaths.image22
+                      : Localizations.localeOf(context).languageCode == 'ar'
+                          ? ImagePaths.image19
+                          : ImagePaths.image21,
+                ),
+
               SizedBox(height: 20.h),
               _buildCustomTextField(
                 controller: nameController,

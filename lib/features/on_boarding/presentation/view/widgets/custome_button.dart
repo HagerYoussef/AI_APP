@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/localization/app_localization.dart';
+import '../../../../../core/themes/colors.dart';
+
 class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
 
@@ -13,26 +16,26 @@ class CustomButton extends StatelessWidget {
       child: Container(
         width: 382.w,
         height: 61.h,
-        padding: EdgeInsets.only(top: 28.h),
+
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          gradient: const LinearGradient(
+          gradient:  LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [
-              Color(0xFF092147),
-              Color(0xFF1E54A6),
+              ColorApp.home_color,
+              ColorApp.color22,
             ],
           ),
         ),
         child: Center(
           child: Text(
-            'Get Started',
+            AppLocalizations.of(context)!.translate('start'),
             style: TextStyle(
               fontSize: 20.sp,
               fontFamily: 'Robot',
               fontWeight: FontWeight.w700,
-              color: Colors.white,
+              color: ColorApp.white_color,
             ),
           ),
         ),

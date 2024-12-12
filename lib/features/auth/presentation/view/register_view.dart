@@ -54,7 +54,7 @@ class RegisterView extends StatelessWidget {
                   SizedBox(height: 20.h),
                   AuthButton(
                     onTap: () {
-                      Navigator.pushNamed(context, 'Home Screen');
+                      Navigator.pushNamed(context, 'Home Page');
                     },
                     buttonText: AppLocalizations.of(context)!.translate('Register') ,
                   ),

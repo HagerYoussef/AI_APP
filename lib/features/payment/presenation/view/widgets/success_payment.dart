@@ -95,7 +95,7 @@ class SuccessPayment extends StatelessWidget {
             InkWell(
               child: Image.asset(
                 Localizations.localeOf(context).languageCode == 'ar'
-                    ? ImagePaths.image13
+                    ? ImagePaths.image18
                     : ImagePaths.image12,
                 height: 61.h,
                 width: 317.w,

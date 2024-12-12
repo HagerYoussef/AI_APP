@@ -69,6 +69,7 @@
   "hist": "History",
   "help": "Help",
   "log": "Log out",
+  "start": "Get Started",
 
 
   "ziad3": "Ziad hamdy12",
@@ -91,5 +92,23 @@
   "cvv": "CVV",
   "paymentsuccess": "Payment Successful",
   "after": "After we receive the payment, \nyou will receive a confirmation email,\nTransaction ID: 39250623782",
-  "back": "Back to Home"
+  "back": "Back to Home",
+
+  "Language": "Language",
+  "English": "English",
+  "Arabic": "Arabic",
+
+  "logout": "Log Out",
+  "are": "Are you sure you want to LogOut?",
+  "confirm2": "Confirm",
+  "clean": "Clean All",
+  "are2": "Are you sure you want to delete your History?\\nThis action cannot be undone.",
+  "understand": "I underserstand that deleting my History will\n remove all data assosiated with my History ,\n and it cannot be restored.",
+  "send2": "Send",
+  "history": "History",
+  "yesterday": "Yasterday",
+  "four": "4 days ago",
+  "three": "3 weeks ago"
+
+
 }
