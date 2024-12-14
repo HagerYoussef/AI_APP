@@ -97,7 +97,7 @@ class _ChatScreenState extends State<ChatScreen> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.white,
+
       body: Column(
         children: [
           Expanded(

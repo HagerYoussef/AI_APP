@@ -5,10 +5,12 @@ import '../../../../../core/themes/colors.dart';
 
 class AnswerContainer extends StatelessWidget {
   final String text;
+  final String? imageUrl;
 
   const AnswerContainer({
     Key? key,
     required this.text,
+    this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -21,22 +23,32 @@ class AnswerContainer extends StatelessWidget {
         vertical: 20.h,
       ),
       decoration: BoxDecoration(
-        color:  ColorApp.color9,
+        color: ColorApp.color9,
         borderRadius: BorderRadius.circular(10.r),
-        border:  Border(
+        border: Border(
           bottom: BorderSide(
             color: ColorApp.color10,
             width: 4.w,
           ),
         ),
       ),
-      child: Text(
+      child: imageUrl == null || imageUrl!.isEmpty
+          ? Text(
         text,
         style: TextStyle(
           fontWeight: FontWeight.w500,
           fontSize: 20.sp,
           fontFamily: 'Cairo',
-          color:  ColorApp.color11,
+          color: ColorApp.color11,
+        ),
+      )
+          : ClipRRect(
+        borderRadius: BorderRadius.circular(10.r),
+        child: Image.network(
+          imageUrl!,
+          fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,
         ),
       ),
     );

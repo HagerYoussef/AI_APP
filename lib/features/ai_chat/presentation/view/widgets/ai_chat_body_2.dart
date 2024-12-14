@@ -38,7 +38,7 @@ class _ChatScreenArabicState extends State<ChatScreenArabic> {
             gradientColors: [ColorApp.color17, ColorApp.color18],
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(15.r),
-              topLeft: Radius.circular(15.r),
+              topRight: Radius.circular(15.r),
               bottomRight: Radius.circular(15.r),
             ),
             imagePath: ImagePaths.new3,
@@ -98,7 +98,7 @@ class _ChatScreenArabicState extends State<ChatScreenArabic> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.white,
+
       body: Column(
         children: [
           Expanded(

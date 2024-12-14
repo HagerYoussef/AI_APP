@@ -45,10 +45,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               height: 24.h,
             ),
           ),
-          Image.asset(
-            ImagePaths.circleProfile,
-            width: 53.w,
-            height: 53.h,
+          InkWell(
+            onTap: (){
+              Navigator.pushNamed(context, "Profile Screen");
+            },
+            child: Image.asset(
+              ImagePaths.circleProfile,
+              width: 53.w,
+              height: 53.h,
+            ),
           ),
         ],
       ),

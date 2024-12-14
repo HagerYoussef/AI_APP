@@ -12,7 +12,9 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
         return Padding(
           padding: const EdgeInsets.only(top: 20),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(Icons.arrow_back_ios_new_rounded),
             color:
             state == ThemeState.dark ? Colors.white : ColorApp.profile_color,
