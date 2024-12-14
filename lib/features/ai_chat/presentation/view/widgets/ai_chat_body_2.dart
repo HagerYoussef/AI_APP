@@ -4,15 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/localization/app_localization.dart';
 import '../../../../../core/themes/colors.dart';
 import '../../../../../core/utils/image_paths.dart';
+import 'custome_message_widget_arabic.dart';
 import 'custome_widget.dart';
 import 'message_input_field.dart';
 
-class ChatScreen extends StatefulWidget {
+class ChatScreenArabic extends StatefulWidget {
   @override
-  _ChatScreenState createState() => _ChatScreenState();
+  _ChatScreenArabicState createState() => _ChatScreenArabicState();
 }
 
-class _ChatScreenState extends State<ChatScreen> {
+class _ChatScreenArabicState extends State<ChatScreenArabic> {
   TextEditingController _controller = TextEditingController();
   bool _isTyping = false;
 
@@ -33,7 +34,7 @@ class _ChatScreenState extends State<ChatScreen> {
       setState(() {
 
         _messages.add(
-          CustomMessageWidget(
+          CustomMessageWidgetArabic(
             gradientColors: [ColorApp.color17, ColorApp.color18],
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(15.r),
@@ -53,12 +54,12 @@ class _ChatScreenState extends State<ChatScreen> {
             String translatedResponse = AppLocalizations.of(context)!.translate('tellme') ?? 'AI response';
 
             _messages.add(
-              CustomMessageWidget(
+              CustomMessageWidgetArabic(
                 gradientColors: [ColorApp.color17, ColorApp.color18],
                 borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(15.r),
-                  topRight: Radius.circular(15.r),
                   bottomLeft: Radius.circular(15.r),
+                  topLeft: Radius.circular(15.r),
+                  bottomRight: Radius.circular(15.r),
                 ),
                 imagePath: ImagePaths.new2,
                 txt: translatedResponse,  // النص المترجم من AI
@@ -82,12 +83,12 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     if (_messages.isEmpty) {
       _messages.add(
-        CustomMessageWidget(
+        CustomMessageWidgetArabic(
           gradientColors: [ColorApp.color17, ColorApp.color18],
           borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(15.r),
-            topRight: Radius.circular(15.r),
             bottomLeft: Radius.circular(15.r),
+            topLeft: Radius.circular(15.r),
+            bottomRight: Radius.circular(15.r),
           ),
           imagePath: ImagePaths.new2,
           txt: AppLocalizations.of(context)!.translate('hello2'),

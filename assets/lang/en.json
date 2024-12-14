@@ -108,7 +108,10 @@
   "history": "History",
   "yesterday": "Yasterday",
   "four": "4 days ago",
-  "three": "3 weeks ago"
+  "three": "3 weeks ago",
 
+
+  "hello2": "Hello, How can I assist you?",
+"tellme": "Tell me about AI?"
 
 }
