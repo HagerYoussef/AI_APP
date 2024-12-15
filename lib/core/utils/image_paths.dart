@@ -82,5 +82,7 @@ class ImagePaths {
   static const String on_4 =   "assets/images/on_boarding/on_boarding_4.png";
   static const String on_5 =   "assets/images/on_boarding/on_boarding_5.png";
   static const String on_6 =   "assets/images/on_boarding/on_boarding_6.png";
+  static const String icon1 =   'assets/images/edit_icon_1.png';
+  static const String icon2 =    'assets/images/edit_icon_2.png';
 
 }
