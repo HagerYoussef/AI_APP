@@ -10,8 +10,7 @@ class SplashViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SplashViewModel().navigateToHome(context);
-
+    SplashViewModel().navigateToAppropriatePage(context);
     return Scaffold(
       backgroundColor: AppColors.primaryColor1,
       body: Stack(

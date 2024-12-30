@@ -1,14 +1,16 @@
 import 'package:ai_app/core/themes/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AuthButton extends StatelessWidget {
   final VoidCallback onTap;
   final String buttonText;
-
+  final bool isLoading;
   const AuthButton({
     required this.onTap,
     required this.buttonText,
+    this.isLoading = false,
     super.key,
   });
 
@@ -25,10 +27,12 @@ class AuthButton extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(16),
         child: Center(
-          child: Text(
+          child: isLoading
+              ? const CupertinoActivityIndicator()
+              : Text(
             buttonText,
             style: TextStyle(
-              color:  ColorApp.color2,
+              color: ColorApp.color2,
               fontSize: 20.sp,
               fontFamily: 'Nunito Sans',
               fontWeight: FontWeight.w800,

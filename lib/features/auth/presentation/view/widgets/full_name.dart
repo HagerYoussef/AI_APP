@@ -5,7 +5,9 @@ import '../../../../../core/localization/app_localization.dart';
 import '../../../../../core/themes/colors.dart';
 
 class FullNameField extends StatelessWidget {
-  const FullNameField({super.key});
+  final TextEditingController controller;
+
+  const FullNameField({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +15,8 @@ class FullNameField extends StatelessWidget {
       width: 326.w,
       height: 50.h,
       child: TextField(
+
+        controller: controller,
         decoration: InputDecoration(
           prefixIcon: Padding(
             padding: EdgeInsets.all(8.w),
@@ -22,24 +26,27 @@ class FullNameField extends StatelessWidget {
               height: 15.89.h,
             ),
           ),
-          hintText: AppLocalizations.of(context)!.translate('full') ,
-          hintStyle:  TextStyle(
+          hintText: AppLocalizations.of(context)!.translate('full'),
+          hintStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 16,
             color: ColorApp.color4,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide:  BorderSide(color: ColorApp.white_color),
+            borderSide: BorderSide(color: ColorApp.white_color),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide:  BorderSide(color: ColorApp.white_color),
+            borderSide: BorderSide(color: ColorApp.white_color),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide:  BorderSide(color: ColorApp.white_color),
+            borderSide: BorderSide(color: ColorApp.white_color),
           ),
+        ),
+        style: TextStyle(
+          color: Colors.white
         ),
       ),
     );

@@ -2,11 +2,12 @@ import 'package:ai_app/core/themes/colors.dart';
 import 'package:ai_app/core/utils/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../core/localization/app_localization.dart';
 
 class PasswordField extends StatefulWidget {
-  const PasswordField({super.key});
+  final TextEditingController controller; // استلام الـ controller
+
+  const PasswordField({super.key, required this.controller}); // تمرير الـ controller في الـ constructor
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();
@@ -21,6 +22,8 @@ class _PasswordFieldState extends State<PasswordField> {
       width: 326.w,
       height: 50.h,
       child: TextField(
+
+        controller: widget.controller, // ربط الـ controller
         keyboardType: TextInputType.text,
         obscureText: _isObscured,
         decoration: InputDecoration(
@@ -48,20 +51,23 @@ class _PasswordFieldState extends State<PasswordField> {
           hintStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 16.sp,
-            color:  ColorApp.color4,
+            color: ColorApp.color4,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide:  BorderSide(color: ColorApp.white_color),
+            borderSide: BorderSide(color: ColorApp.white_color),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide:  BorderSide(color: ColorApp.white_color),
+            borderSide: BorderSide(color: ColorApp.white_color),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide:  BorderSide(color: ColorApp.white_color),
+            borderSide: BorderSide(color: ColorApp.white_color),
           ),
+        ),
+        style: TextStyle(
+            color: Colors.white
         ),
       ),
     );

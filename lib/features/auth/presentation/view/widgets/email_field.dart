@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../core/localization/app_localization.dart';
 import '../../../../../core/themes/colors.dart';
 import '../../../../../core/utils/image_paths.dart';
 
 class EmailField extends StatelessWidget {
-  const EmailField({super.key});
+  final TextEditingController controller; // استلام الـ controller
+
+  const EmailField({super.key, required this.controller}); // تمرير الـ controller في الـ constructor
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +15,7 @@ class EmailField extends StatelessWidget {
       width: 326.w,
       height: 50.h,
       child: TextField(
+        controller: controller, // ربط الـ controller
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
           prefixIcon: Padding(
@@ -24,24 +26,27 @@ class EmailField extends StatelessWidget {
               height: 15.89.h,
             ),
           ),
-          hintText: AppLocalizations.of(context)!.translate('email') ,
+          hintText: AppLocalizations.of(context)!.translate('email'),
           hintStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 16.sp,
-            color:  ColorApp.color4,
+            color: ColorApp.color4,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide:  BorderSide(color: ColorApp.white_color),
+            borderSide: BorderSide(color: ColorApp.white_color),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide:  BorderSide(color: ColorApp.white_color),
+            borderSide: BorderSide(color: ColorApp.white_color),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide:  BorderSide(color: ColorApp.white_color),
+            borderSide: BorderSide(color: ColorApp.white_color),
           ),
+        ),
+        style: TextStyle(
+            color: Colors.white
         ),
       ),
     );
