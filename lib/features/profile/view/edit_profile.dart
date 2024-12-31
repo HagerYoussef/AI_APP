@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:ai_app/features/profile/view/widgets/custom_text_field.dart';
 import 'package:ai_app/features/profile/view/widgets/profile_image_widget.dart';
-//import 'package:image_picker/image_picker.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,7 +20,7 @@ class EditProfilePage extends StatefulWidget {
 
 class _EditProfilePageState extends State<EditProfilePage> {
   File? _profileImage;
- // final ImagePicker _picker = ImagePicker();
+ final ImagePicker _picker = ImagePicker();
   late TextEditingController nameController;
   late TextEditingController usernameController;
   late TextEditingController phoneController;
@@ -138,11 +138,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
   }
 
   Future<void> _pickImage() async {
-   // final XFile? pickedFile = await _picker.pickImage(
-    //  source: ImageSource.gallery,
-   // );
+   final XFile? pickedFile = await _picker.pickImage(
+     source: ImageSource.gallery,
+   );
 
-   // if (pickedFile != null) {
+   if (pickedFile != null) {
       setState(() {
         _profileImage = File(pickedFile.path);
       });
