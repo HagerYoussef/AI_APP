@@ -20,7 +20,7 @@ class EditProfilePage extends StatefulWidget {
 
 class _EditProfilePageState extends State<EditProfilePage> {
   File? _profileImage;
- final ImagePicker _picker = ImagePicker();
+  final ImagePicker _picker = ImagePicker();
   late TextEditingController nameController;
   late TextEditingController usernameController;
   late TextEditingController phoneController;
@@ -39,13 +39,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
   _loadData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-  setState(() {
-      nameController.text = prefs.getString('name') ??  AppLocalizations.of(context)!.translate('ziad2');
-      usernameController.text = prefs.getString('username') ??  AppLocalizations.of(context)!.translate('ziad3');
+    setState(() {
+      nameController.text = prefs.getString('userName') ??  AppLocalizations.of(context)!.translate('ziad2');
+      usernameController.text = prefs.getString('userName') ??  AppLocalizations.of(context)!.translate('ziad3');
       phoneController.text = prefs.getString('phone') ?? AppLocalizations.of(context)!.translate('phone');
       emailController.text = prefs.getString('email') ?? 'Ziad hamdy222@gmail.com';
 
-
+      print('ProfileImage: ${prefs.getString('profileImage')}');
       String? imagePath = prefs.getString('profileImage');
       if (imagePath != null) {
         _profileImage = File(imagePath);
@@ -56,16 +56,14 @@ class _EditProfilePageState extends State<EditProfilePage> {
   _saveData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    prefs.setString('name', nameController.text);
-    prefs.setString('username', usernameController.text);
+    prefs.setString('userName', nameController.text);
+    prefs.setString('userName', usernameController.text);
     prefs.setString('phone', phoneController.text);
     prefs.setString('email', emailController.text);
     if (_profileImage != null) {
       prefs.setString('profileImage', _profileImage!.path);
     }
 
-
-    Navigator.pop(context);
   }
 
   @override
@@ -138,11 +136,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
   }
 
   Future<void> _pickImage() async {
-   final XFile? pickedFile = await _picker.pickImage(
-     source: ImageSource.gallery,
-   );
+    final XFile? pickedFile = await _picker.pickImage(
+      source: ImageSource.gallery,
+    );
 
-   if (pickedFile != null) {
+    if (pickedFile != null) {
       setState(() {
         _profileImage = File(pickedFile.path);
       });

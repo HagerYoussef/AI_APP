@@ -27,9 +27,10 @@ class _SocialButtonsState extends State<SocialButtons> {
     });
 
     try {
+      await _googleSignIn.signOut();
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
 
-       if (googleUser != null) {
+      if (googleUser != null) {
         final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
 
         final OAuthCredential credential = GoogleAuthProvider.credential(
@@ -43,8 +44,11 @@ class _SocialButtonsState extends State<SocialButtons> {
         if (user != null) {
           SharedPreferences prefs = await SharedPreferences.getInstance();
           await prefs.setBool('isLoggedIn', true);
+          await prefs.setString('email', user.email ?? '');
+          String emailPrefix = user.email?.split('@')[0] ?? '';
+          await prefs.setString('userName', emailPrefix);
 
-           Navigator.pushReplacementNamed(context, HomePage.routeName);
+          Navigator.pushReplacementNamed(context, HomePage.routeName);
         } else {
           print("Google Sign-In failed");
         }
@@ -56,15 +60,13 @@ class _SocialButtonsState extends State<SocialButtons> {
     } finally {
       if (mounted) {
         setState(() {
-          isLoading = false;
-        });
-      }
+          isLoading = false;});      }
     }
   }
 
   Future<void> _signInWithApple(BuildContext context) async {
     setState(() {
-      isLoading = true; // تفعيل حالة التحميل فورًا بعد اختيار الايميل
+      isLoading = true;
     });
 
     try {
@@ -75,7 +77,6 @@ class _SocialButtonsState extends State<SocialButtons> {
         ],
       );
 
-      // هنا يظهر اللودينج بعد اختيار الايميل وقبل البدء في التوثيق
       final OAuthCredential appleCredential = OAuthProvider("apple.com").credential(
         idToken: credential.identityToken,
         accessToken: credential.authorizationCode,
@@ -86,9 +87,13 @@ class _SocialButtonsState extends State<SocialButtons> {
 
       if (user != null) {
         SharedPreferences prefs = await SharedPreferences.getInstance();
-        await prefs.setBool('isLoggedIn', true);  // حفظ حالة تسجيل الدخول
+        await prefs.setBool('isLoggedIn', true);
+        await prefs.setString('email', user.email ?? '');
+        String emailPrefix = user.email?.split('@')[0] ?? '';
 
-        // بعد تسجيل الدخول بنجاح، إخفاء مؤشر التحميل والتوجه إلى الصفحة الرئيسية
+        await prefs.setString('userName', emailPrefix);
+
+
         Navigator.pushReplacementNamed(context, HomePage.routeName);
       } else {
         print("Apple Sign-In failed");
@@ -96,9 +101,9 @@ class _SocialButtonsState extends State<SocialButtons> {
     } catch (error) {
       print("Error during Apple Sign-In: $error");
     } finally {
-      if (mounted) {  // تأكد من أن الـ widget لا يزال موجودًا قبل تغيير الحالة
+      if (mounted) {
         setState(() {
-          isLoading = false; // إيقاف حالة التحميل بعد العملية
+          isLoading = false;
         });
       }
     }
@@ -112,6 +117,7 @@ class _SocialButtonsState extends State<SocialButtons> {
           children: [
             InkWell(
               onTap: () async {
+
                 await _signInWithGoogle(context);
               },
               child: SocialButton(

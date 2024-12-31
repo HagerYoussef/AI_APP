@@ -114,7 +114,7 @@ class MyApp extends StatelessWidget {
                         ProfileScreen.routeName: (_) =>  ProfileScreen(),
                         PaymentCardScreen.routeName: (_) =>  PaymentCardScreen(),
                         SuccessPayment.routeName: (_) =>  SuccessPayment(),
-                        //EditProfilePage.routeName: (_) =>  EditProfilePage(),
+                        EditProfilePage.routeName: (_) =>  EditProfilePage(),
                         History.routeName: (_) =>  History(),
                         LogOutDialog.routeName: (_) =>  LogOutDialog(),
                         LanguageSelectionPage.routeName: (_) =>  LanguageSelectionPage(),
